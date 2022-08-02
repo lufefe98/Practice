@@ -6,3 +6,11 @@ p {
     width: 400px;
     height: 100px;
 }
+
+#top-par {
+    padding-bottom: 20px;
+}
+
+#bottom-par {
+    padding-top: 20px;
+}
