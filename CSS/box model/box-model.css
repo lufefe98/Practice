@@ -5,12 +5,22 @@ body {
 p {
     width: 400px;
     height: 100px;
+    background: turquoise;
 }
 
 #top-par {
     padding-bottom: 20px;
+    /* margin-bottom: 20px; */
+
+    /* Had to comment out the above margin-bottom because asymetric
+    margins do not collapse, and only the larger margin 
+    value wins over the smaller margin */
+
 }
 
 #bottom-par {
     padding-top: 20px;
+    margin-top: 50px;
+    /* The above margin-top pushes the bottom paragraph away from
+    the top paragraph */
 }
