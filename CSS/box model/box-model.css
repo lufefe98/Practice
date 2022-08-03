@@ -3,16 +3,19 @@ body {
 }
 
 p {
+    background: turquoise;
+}
+
+.block-pars {
     width: 400px;
     height: 100px;
-    background: turquoise;
 }
 
 #top-par {
     padding-bottom: 20px;
     /* margin-bottom: 20px; */
 
-    /* Had to comment out the above margin-bottom because asymetric
+    /* Had to comment out the above margin-bottom because vertical
     margins do not collapse, and only the larger margin 
     value wins over the smaller margin */
 
@@ -24,3 +27,23 @@ p {
     /* The above margin-top pushes the bottom paragraph away from
     the top paragraph */
 }
+
+hr {
+    background: gold;
+}
+
+.inline-pars {
+    display: inline;
+    background: rgb(245, 7, 245);
+}
+
+#par1 {
+    margin-right: 50px; 
+}
+
+#par2 {
+    margin-left: 50px;
+}
+/* Only horizontal margin and padding work when the display is
+inline and the margin does not collapse onto the margin of the
+other adjacent element */
