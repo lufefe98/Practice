@@ -57,6 +57,15 @@ other adjacent element */
     border: 10px black solid;
     text-align: center;
 }
+.alt-box {
+    box-sizing: border-box;
+    height: 400px;
+    width: 600px;
+    padding: 50px;
+    margin: 50px;
+    border: 10px black solid;
+    text-align: center;
+}
 
 .expl-box {
     background: yellow;
