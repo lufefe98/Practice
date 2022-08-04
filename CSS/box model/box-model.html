@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +10,9 @@
 
     <title>Box Model Learning</title>
 </head>
+
 <body>
-    
+
     <h1>Outer Display Type (eg: p)</h1>
     <!-- Block level elements  -->
 
@@ -21,7 +23,7 @@
         Quam animi odit sunt impedit voluptatibus voluptatem!
         Error cupiditate repellendus saepe, odio quam voluptatum sunt doloribus consequuntur.
     </p>
-    
+
     <p id="bottom-par" class="block-pars">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit.
         Tempora enim nemo culpa reiciendis.
@@ -37,7 +39,7 @@
         Lorem ipsum, dolor sit amet consectetur adipisicing elit.
         Tempora enim nemo culpa reiciendis.
     </p>
-    
+
     <p id="par2" class="inline-pars">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit.
         Tempora enim nemo culpa reiciendis.
@@ -49,8 +51,24 @@
 
     <hr>
 
+    <h1>Standard CSS Box Model</h1>
+    <!-- Remember: The box model mainly applies to block
+    level elements and partially to inline elements -->
 
-
+    <div class="std-box">
+        This div uses the standard box model
+        <p class="expl-std-box">The margin, padding, border and content all add up to give
+            a cumulative distance along with the height, vertically and
+            width horizontally
+        </p>
+        <p class="expl-std-box">The amount of space the box takes up will
+            be a combination of the width/height (600px or 400px, respectively,
+            the padding on either side of the content (50px twice)
+            and the border on either side (10px) which add up to a height
+            of 520px and a width of 720px)
+        </p>
+    </div>
 
 </body>
+
 </html>
