@@ -70,3 +70,23 @@ other adjacent element */
 .expl-box {
     background: yellow;
 }
+
+
+#il-box-par1 {
+    background: white;
+    border: 2.5px solid turquoise;
+    width: 500px;
+}
+
+.inline-span {
+    background: rgba(255, 6, 6, 0.527);
+    border: solid 1px rgba(255, 6, 6);
+    margin: 30px;
+    padding: 25px;
+    font-weight: bold;
+    /* Notice that when the margin is set, it only pushes the elements
+    that are on the sides (horizontal) away from it and not the ones
+    that are above and below it (vertical).
+    Also, the padding expands the box and instead of pushing elements
+    away from the span, it overlaps the text in the paragraph */
+}
