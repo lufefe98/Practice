@@ -1,0 +1,34 @@
+body {
+    background-image: url(https://static.wikia.nocookie.net/muc/images/d/df/1450076514_madddogg_artowork.jpg/revision/latest?cb=20181201132242);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+    max-width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar {
+    width: 100%;
+    margin: 5px;
+}
+
+ul {
+    display: inline-block;
+    list-style: none;
+}
+
+li {
+    text-align: end;
+    display: inline-block;
+    margin: 5px;
+}
+
+.nav-head {
+    display: inline-block;
+}
