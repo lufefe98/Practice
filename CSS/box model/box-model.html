@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,14 +10,95 @@
 
     <title>Box Model Learning</title>
 </head>
+
 <body>
-    
-    
+
+    <h1>Outer Display Type (eg: p)</h1>
+    <!-- Block level elements  -->
+
+    <h3>Block pars</h3>
+    <p id="top-par" class="block-pars">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Tempora enim nemo culpa reiciendis.
+        Quam animi odit sunt impedit voluptatibus voluptatem!
+        Error cupiditate repellendus saepe, odio quam voluptatum sunt doloribus consequuntur.
+    </p>
+
+    <p id="bottom-par" class="block-pars">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Tempora enim nemo culpa reiciendis.
+        Quam animi odit sunt impedit voluptatibus voluptatem!
+        Error cupiditate repellendus saepe, odio quam voluptatum sunt doloribus consequuntur.
+    </p>
+
+    <hr>
+
+    <h3>Inline pars</h3>
+
+    <p id="par1" class="inline-pars">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Tempora enim nemo culpa reiciendis.
+    </p>
+
+    <p id="par2" class="inline-pars">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Tempora enim nemo culpa reiciendis.
+    </p>
+
+    <!-- The above paragraphs have a display of inline.
+    This prevents them from breaking onto a new line.
+    Width and height won't impact the element. -->
+
+    <hr>
+
+    <h1>Standard CSS Box Model</h1>
+    <!-- Remember: The box model mainly applies to block
+    level elements and partially to inline elements -->
+
+    <div class="std-box">
+        This div uses the standard box model
+        <p class="expl-box">The margin, padding, border and content all add up to give
+            a cumulative distance along with the height, vertically and
+            width horizontally
+        </p>
+        <p class="expl-box">The amount of space the box takes up will
+            be a combination of the width/height (600px or 400px, respectively),
+            the padding on either side of the content (50px twice)
+            and the border on either side (10px) which add up to a height
+            of 520px and a width of 720px
+        </p>
+    </div>
+
+    <h1>Alternative CSS Box Model</h1>
+
+    <div class="alt-box">
+        This div uses the Alternative box model
+        <p class="expl-box">
+            Because the box-sizing of this div was set to border-box
+            it follows the alternative box-model where the size of the box
+            is strictly limited to the width and height that is set for it.
+        </p>
+        <p class="expl-box">
+            The space of the box is the height (400px), vertically and
+            the width (600px), horizontally. For the size of the content, it
+            is the height or width minus the padding and border, unlike
+            the standard model where the content, the padding and
+            the border all add up and increase the box size.
+        </p>
+    </div>
 
 
+    <hr>
 
+    <h1>Box Model and Inline Boxes</h1>
 
-
+    <p id="il-box-par1">Lorem ipsum, dolor sit amet <span class="inline-span">SPAN HERE!!!</span> adipisicing elit.
+        Animi voluptatibus nesciunt voluptatem?
+        Dicta facilis mollitia quos aspernatur quibusdam
+        voluptatem alias error nisi, corrupti est repudiandae
+        dolorum architecto maiores voluptas iste.
+    </p>
 
 </body>
+
 </html>

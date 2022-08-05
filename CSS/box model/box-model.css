@@ -1,3 +1,92 @@
 body {
-    background-image: linear-gradient(to right, black, gray);
+    background: white;
+}
+
+p {
+    background: turquoise;
+}
+
+.block-pars {
+    width: 400px;
+    height: 100px;
+}
+
+#top-par {
+    padding-bottom: 20px;
+    /* margin-bottom: 20px; */
+
+    /* Had to comment out the above margin-bottom because vertical
+    margins do not collapse, and only the larger margin 
+    value wins over the smaller margin */
+
+}
+
+#bottom-par {
+    padding-top: 20px;
+    margin-top: 50px;
+    /* The above margin-top pushes the bottom paragraph away from
+    the top paragraph */
+}
+
+hr {
+    border-color: gold;
+}
+
+.inline-pars {
+    display: inline;
+    background: rgb(245, 7, 245);
+}
+
+#par1 {
+    margin-right: 50px; 
+}
+
+#par2 {
+    margin-left: 50px;
+}
+/* Only horizontal margin and padding work when the display is
+inline and the margin does not collapse onto the margin of the
+other adjacent element */
+
+
+.std-box {
+    height: 400px;
+    width: 600px;
+    padding: 50px;
+    margin: 50px;
+    border: 10px black solid;
+    text-align: center;
+}
+.alt-box {
+    box-sizing: border-box;
+    height: 400px;
+    width: 600px;
+    padding: 50px;
+    margin: 50px;
+    border: 10px black solid;
+    text-align: center;
+}
+
+.expl-box {
+    background: yellow;
+}
+
+
+#il-box-par1 {
+    background: white;
+    border: 2.5px solid turquoise;
+    width: 500px;
+}
+
+.inline-span {
+    background: rgba(255, 6, 6, 0.527);
+    border: solid 1px rgba(255, 6, 6);
+    margin: 30px;
+    padding: 25px;
+    font-weight: bold;
+    /* Notice that when the margin is set, it only pushes the elements
+    that are on the sides (horizontal) away from it and not the ones
+    that are above and below it (vertical).
+    Also, the padding expands the box and instead of pushing elements
+    away from the span, it overlaps the text in the paragraph */
 }
