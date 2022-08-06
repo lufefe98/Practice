@@ -42,3 +42,40 @@ li {
     margin-bottom: 0%;
     font-family: 'Goblin One', cursive;
 }
+
+.new-music {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    padding: 15px;
+    margin: 150px 20px;
+    border: 5px solid rgb(83, 83, 247);
+    background: rgba(77, 77, 185, 0.911);
+}
+
+.new-music p {
+    color: #fff;
+    font-size: 1.75rem;
+}
+
+.album-name {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-family: 'Goblin One', cursive;
+}
+
+button {
+    font-size: 1.5rem;
+    height: 35px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    background: none;
+    border: 2.5px solid rgb(83, 83, 247);
+}
+
+.streaming-platforms {
+    position: fixed;
+    right: 0;
+    width: 5%;
+    height: 80vh;
+}
