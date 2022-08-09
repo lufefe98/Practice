@@ -27,6 +27,7 @@ ul {
     display: inline-block;
     list-style: none;
     padding-left: 0%;
+    margin-top: 0;
 }
 
 li {
@@ -37,9 +38,8 @@ li {
 .nav-head {
     font-size: 2.25em;
     display: inline-block;
-    margin-right: 40%;
-    margin-top: 0%;
-    margin-bottom: 0%;
+    margin: 0 25% 0 2.5%;
+    height: 80%;
     font-family: 'Goblin One', cursive;
 }
 
@@ -65,7 +65,10 @@ li {
 }
 
 button {
-    font-size: 1.5rem;
+    display: block;
+    /* Move the button onto a new line and allow use of vertical margins */
+    margin: 10px 10px;
+    font-size: 1.3rem;
     height: 35px;
     text-transform: uppercase;
     box-sizing: border-box;
