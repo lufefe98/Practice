@@ -1,3 +1,16 @@
 body {
     background: white;
 }
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.static {
+    height: 250px;
+    width: 250px;
+    background-image: linear-gradient(red, blue);
+    margin: auto;
+    text-align: center;
+}
