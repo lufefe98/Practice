@@ -7,10 +7,57 @@ body {
     flex-direction: row;
 }
 
-.static {
+#static {
+    position: static;
+    /* top: 220px;
+    left: 600px; */
+    /* Top and left are commented out because they do not work
+    on elements with static positions */
     height: 250px;
     width: 250px;
     background-image: linear-gradient(red, blue);
     margin: auto;
     text-align: center;
+}
+#relative {
+    position: relative;
+    top: 230px;
+    height: 250px;
+    width: 250px;
+    background-image: linear-gradient(white, blue);
+    margin: auto;
+    text-align: center;
+    z-index: 23;
+}
+#absolute {
+    position: absolute;
+    top: 230px;
+    left: 230px;
+    height: 250px;
+    width: 250px;
+    background-image: linear-gradient(green, blue);
+    margin: auto;
+    text-align: center;
+}
+#fixed {
+    position: fixed;
+    top: 230px;
+    height: 250px;
+    width: 250px;
+    background-image: linear-gradient(grey, blue);
+    margin: auto;
+    text-align: center;
+}
+#sticky {
+    position: sticky;
+    height: 250px;
+    width: 250px;
+    background-image: linear-gradient(yellow, blue);
+    margin: auto;
+    text-align: center;
+}
+
+.Explainer-pars {
+    color: white;
+    font-size: x-large;
 }
