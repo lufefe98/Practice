@@ -19,7 +19,7 @@
             Static Box
 
             <p class="Explainer-pars">
-                Can't use z-index, top, left, right nor 
+                Can't use top, left, right nor 
                 bottom properties
             </p>
         </div>
@@ -29,7 +29,9 @@
             Relative Box
 
             <p class="Explainer-pars">
-
+                Positioned according to normal document flow and
+                offset relative to itself based on top/bottom/left/right
+                <span class="position">Top: 230px</span>
             </p>
         </div>
 
@@ -38,7 +40,13 @@
             Absolute Box
 
             <p class="Explainer-pars">
-
+                Removed from normal flow of the document and 
+                has no space on the created for it in page 
+                layout. It's positioned relative to nearest
+                ancestor. Otherwsie placed relative to nearest
+                containing block.
+                The final position is based on top/bottom/left/right value.
+                <span class="position">Top: 230px; left: 230px</span>
             </p>
         </div>
 
@@ -47,7 +55,12 @@
             Fixed Box
 
             <p class="Explainer-pars">
-
+                Removed from normal document flow. Positioned 
+                relative to initial containing block determined by
+                viewport (unless ancestor has filter/perspective/transform or
+                will-change set to transform)
+                Final position based on top/bottom/left/right value.
+                <span class="position">Top: 250px</span>
             </p>
         </div>
 
@@ -56,7 +69,10 @@
             Sticky Box
 
             <p class="Explainer-pars">
-
+                Part of normal document flow, then offset relative to
+                nearest scrolling ancestor and and containing block (nearest
+                block-level element) including table related elements based on
+                top/bottom/left/right value. The offset won't affect other elements
             </p>
         </div>
     </div>

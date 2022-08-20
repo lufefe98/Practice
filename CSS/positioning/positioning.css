@@ -5,6 +5,7 @@ body {
 .container {
     display: flex;
     flex-direction: row;
+    background-image: linear-gradient(white, grey);
 }
 
 #static {
@@ -59,5 +60,10 @@ body {
 
 .Explainer-pars {
     color: white;
-    font-size: x-large;
+    font-size: large;
+}
+.position {
+    display: block;
+    margin-top: 10px;
+    color: black;
 }
