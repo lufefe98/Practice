@@ -1,11 +1,14 @@
 body {
     background: white;
+    height: 200vh;
 }
 
 .container {
     display: flex;
     flex-direction: row;
-    background-image: linear-gradient(white, grey);
+    background-image: linear-gradient(to right, white, grey);
+    height: 150vh;
+    margin-bottom: 300px;
 }
 
 #static {
@@ -49,10 +52,11 @@ body {
     margin: auto;
     text-align: center;
 }
-#sticky {
+.sticky {
     position: sticky;
     height: 250px;
     width: 250px;
+    top: 500px;
     background-image: linear-gradient(yellow, blue);
     margin: auto;
     text-align: center;
@@ -66,4 +70,32 @@ body {
     display: block;
     margin-top: 10px;
     color: black;
+}
+
+
+
+#static-container {
+    background-image: linear-gradient(to right, black, yellow);
+    height: 500px;
+    width: 80%;
+    margin: 100px auto 0;
+}
+#positioned-container {
+    position: relative;
+    background-image: linear-gradient(to right, black, yellow);
+    height: 500px;
+    width: 80%;
+    margin: 100px auto 0;
+}
+#absolute-practice1 {
+    position: absolute;
+    background: black;
+    height: 350px;
+    width: 350px;
+    right: 5px;
+}
+.Explainer-span {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
 }

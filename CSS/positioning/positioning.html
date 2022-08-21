@@ -35,6 +35,36 @@
             </p>
         </div>
 
+        <!-- 
+                * SIDE NOTES *
+            Absolutely positioned elements (eg: fixed and absolute) 
+            which have any margins will have them added to their 
+            left/right or top/bottom properties.
+
+            Absolutely positioned elements that have width and
+            height set to auto are sized to fit their contents. However, if
+            the element is non-replaced, the top and bottom property can be
+            used to fill in the remaining vertical space if height is set
+            to auto. The same would apply horizontally for left and right 
+            properties.
+
+
+            If both top and bottom are set to any value other than
+            auto, top wins.
+            If the language used is ltr (left to right) script then left
+            wins, but if it is a rtl script, then right wins.
+
+            ACCESSIBILITY CONCERNS: Make sure absolutely fixed elements do
+            not obscure the other content when zooming in to increase
+            text size.
+
+            PERFORMANCE CONCERNS: Sticky and fixed elements need
+            to repaint at several points on the browser and may be
+            slow to do so on some browsers/machines and one fix for this
+            can be to use will-change: transform; to render the element in its
+            own layer which improves repaint speed and therefore performance
+            and accessibility.
+        -->
 
         <div id="absolute">
             Absolute Box
@@ -65,7 +95,7 @@
         </div>
 
 
-        <div id="sticky">
+        <div class="sticky">
             Sticky Box
 
             <p class="Explainer-pars">
@@ -77,6 +107,48 @@
         </div>
     </div>
 
+    <!-- <div class="sticky">
+        Sticky Box
+
+        <p class="Explainer-pars">
+            This box is relatively positioned until the containing
+            block crosses a specified point (eg: by setting a top value
+            which is not auto) and from there it "sticks" to that point
+            until it meets the end of the containing block.
+        </p>
+    </div> -->
+
+
+
+    <div class="container">
+
+        <div id="static-container">
+            <div id="absolute-practice1">
+                <p class="Explainer-pars">
+                    Absolute box is either going to be positioned
+                    relative to its nearest non-static ancestor or the
+                    initial contianing block.
+                    <span class="Explainer-span">(THIS DIV IS IN A STATIC CONTAINER)</span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div id="positioned-container">
+            <div id="absolute-practice1">
+                <p class="Explainer-pars">
+                    Absolute box is either going to be positioned
+                    relative to its nearest non-static ancestor or the
+                    initial contianing block.
+                    <span class="Explainer-span">(THIS DIV IS IN A RELATIVE CONTAINER)</span>
+                </p>
+            </div>
+        </div>
+
+    </div>
 
 
 
