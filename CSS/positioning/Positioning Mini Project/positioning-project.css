@@ -1,0 +1,35 @@
+body {
+    background: white;
+    height: 100vh;
+    margin: 0;
+}
+
+nav {
+    position: relative;
+    height: 7.5%;
+    width: 100%;
+    background: rgb(247, 245, 245);
+}
+
+.container {
+    box-sizing: border-box;
+    position: relative;
+    margin: 100px auto ;
+    /* height: 90vh; */
+    width: 65%;
+    box-shadow: 10px 10px 10px 10px #0c0c0c;
+}
+
+.sticky-background {
+    position: sticky;
+    top: 30%;
+    left: 30%;
+}
+
+.absolute-background {
+    position: absolute;
+}
+
+.two {
+    margin-bottom: 200px;
+}
