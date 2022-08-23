@@ -1,12 +1,12 @@
 body {
     background: white;
-    height: 100vh;
     margin: 0;
 }
 
 nav {
     position: relative;
-    height: 7.5%;
+    top: -19px;
+    height: 50px;
     width: 100%;
     background: rgb(247, 245, 245);
 }
@@ -14,22 +14,50 @@ nav {
 .container {
     box-sizing: border-box;
     position: relative;
-    margin: 100px auto ;
-    /* height: 90vh; */
+    margin: 100px auto;
+    height: 80vh;
     width: 65%;
     box-shadow: 10px 10px 10px 10px #0c0c0c;
 }
 
 .sticky-background {
     position: sticky;
+    color: black;
+    text-transform: capitalize;
+    font-size: 5em;
     top: 30%;
-    left: 30%;
+    right: 500px;
+    margin-left: 33%;
+    margin-right: 33%;
+    z-index: -5;
+    opacity: 0.3;
 }
 
 .absolute-background {
     position: absolute;
+    top: 20%;
+    left: 15%;
+    font-size: 10em;
+    /* margin-left: 33%;
+    margin-right: 33%; */
+    z-index: -5;
+    opacity: 0.3;
 }
 
-.two {
-    margin-bottom: 200px;
+.contact {
+    position: fixed;
+    right: 1%;
+    font-size: 2.5em;
+}
+.phone {
+    top: 35%;
+    color: blue;
+}
+.whatsapp {
+    top: 50%;
+    color: green;
+}
+.email {
+    top: 65%;
+    color: yellow;
 }
