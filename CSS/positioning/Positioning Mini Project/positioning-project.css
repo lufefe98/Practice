@@ -11,6 +11,10 @@ nav {
     background: rgb(247, 245, 245);
 }
 
+p {
+    margin: 0 50px 0;
+}
+
 .container {
     box-sizing: border-box;
     position: relative;
@@ -20,26 +24,30 @@ nav {
     box-shadow: 10px 10px 10px 10px #0c0c0c;
 }
 
+.con-two {
+    padding-top: 50px;
+}
+
 .sticky-background {
     position: sticky;
+    display: inline-block;
+    /* Giving display of inline or inline-block makes the left property work */
+    left: 40%;
+    top: 15%;
+    margin-top: 0;
+    margin-bottom: 0;
+    z-index: -5;
+    opacity: 0.3;
     color: black;
     text-transform: capitalize;
     font-size: 5em;
-    top: 30%;
-    right: 500px;
-    margin-left: 33%;
-    margin-right: 33%;
-    z-index: -5;
-    opacity: 0.3;
 }
 
 .absolute-background {
     position: absolute;
-    top: 20%;
+    bottom: 20%;
     left: 15%;
     font-size: 10em;
-    /* margin-left: 33%;
-    margin-right: 33%; */
     z-index: -5;
     opacity: 0.3;
 }
