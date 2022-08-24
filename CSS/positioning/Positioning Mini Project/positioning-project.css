@@ -9,6 +9,7 @@ nav {
     height: 50px;
     width: 100%;
     background: rgb(247, 245, 245);
+    text-align: center;
 }
 
 p {
@@ -16,6 +17,7 @@ p {
 }
 
 .container {
+    background: rgba(7, 160, 160, 0.171);
     box-sizing: border-box;
     position: relative;
     margin: 100px auto;
@@ -32,24 +34,26 @@ p {
     position: sticky;
     display: inline-block;
     /* Giving display of inline or inline-block makes the left property work */
-    left: 40%;
+    left: 35%;
     top: 15%;
     margin-top: 0;
     margin-bottom: 0;
-    z-index: -5;
+    z-index: 1;
     opacity: 0.3;
     color: black;
-    text-transform: capitalize;
-    font-size: 5em;
+    text-transform: uppercase;
+    font-size: 6em;
 }
 
 .absolute-background {
     position: absolute;
     bottom: 20%;
-    left: 15%;
-    font-size: 10em;
+    left: 20%;
+    font-size: 6em;
     z-index: -5;
+    color: black;
     opacity: 0.3;
+    text-transform: uppercase;
 }
 
 .contact {
