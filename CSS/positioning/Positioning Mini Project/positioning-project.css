@@ -14,6 +14,10 @@ nav {
     background: rgb(70, 168, 70);
 }
 
+a {
+    color: black;
+}
+
 .nav-h1 {
     display: inline-block;
     margin-top: 0;
@@ -38,14 +42,14 @@ li {
     font-family: 'Roboto', sans-serif;
 }
 
-a {
+.underline {
     color: black;
     text-decoration: none;
     position: relative;
     font-size: x-large;
 }
 
-a:after {
+.underline:after {
     content: '';
     position: absolute;
     width: 100%;
@@ -58,7 +62,7 @@ a:after {
     transition: transform 0.45s ease-out;
   }
 
-  a:hover:after {
+  .underline:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
   }
@@ -134,4 +138,27 @@ p {
 .email {
     top: 65%;
     color: yellow;
+}
+
+.up {
+    text-align: center;
+    position: sticky;
+    top: 550px;
+    left: 50px;
+    background: grey;
+    border-radius: 60px;
+    width: 50px;
+    height: 50px;
+}
+.up:hover {
+    background: rgb(69, 88, 66);
+}
+.up:hover .fa-chevron-up {
+    font-size: 2rem;
+}
+.fa-chevron-up {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    columns: black;
+    transition: transform ease-out 0.45s;|
 }
