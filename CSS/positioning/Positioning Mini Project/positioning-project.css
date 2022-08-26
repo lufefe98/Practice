@@ -1,6 +1,7 @@
 body {
     background: rgba(0, 128, 0, 0.164);
     margin: 0;
+    box-sizing: border-box;
 }
 
 nav {
@@ -72,21 +73,34 @@ p {
 }
 
 .container {
-    background: rgba(10, 196, 50, 0.377);
     box-sizing: border-box;
     position: relative;
+    text-align: center;
     margin: 100px auto;
     height: 85vh;
     width: 65%;
     box-shadow: 10px 10px 10px 10px #0c0c0c;
     border-radius: 0.5em;
-    text-align: center;
+    background: rgba(10, 196, 50, 0.377);
+}
+.books {
+    position: absolute;
+    top: 60px;
+    font-size: 2.5em;
+}
+.left-book {
+    left: 2%;
+}
+.right-book {
+    right: 2%;
+    transform: scaleX(-1);
 }
 #story-h1 {
     position: static;
-    /* Giving display of inline or inline-block makes the left property work */
     opacity: 0.7;
+    margin-top: 0;
     margin-bottom: 0;
+    width: auto;
     color: black;
     font-family: 'Aboreto', cursive;
     text-transform: uppercase;
