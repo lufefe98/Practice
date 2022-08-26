@@ -82,7 +82,7 @@ p {
     border-radius: 0.5em;
     text-align: center;
 }
-.sticky-background {
+#story-h1 {
     position: static;
     /* Giving display of inline or inline-block makes the left property work */
     opacity: 0.7;
@@ -93,7 +93,7 @@ p {
     font-size: 6em;
 }
 
-.absolute-background {
+#mission-h1 {
     position: static;
     font-size: 6em;
     margin: 0 0 0;
