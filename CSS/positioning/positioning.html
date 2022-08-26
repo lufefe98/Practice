@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="positioning.css">
+
+
+
+    <title>Positioing Practice</title>
+</head>
+<body>
+
+    <div class="container">
+        <div id="static">
+            Static Box
+
+            <p class="Explainer-pars">
+                Can't use top, left, right nor 
+                bottom properties
+            </p>
+        </div>
+
+
+        <div id="relative">
+            Relative Box
+
+            <p class="Explainer-pars">
+                Positioned according to normal document flow and
+                offset relative to itself based on top/bottom/left/right
+                <span class="position">Top: 230px</span>
+            </p>
+        </div>
+
+        <!-- 
+                * SIDE NOTES *
+            Absolutely positioned elements (eg: fixed and absolute) 
+            which have any margins will have them added to their 
+            left/right or top/bottom properties.
+
+            Absolutely positioned elements that have width and
+            height set to auto are sized to fit their contents. However, if
+            the element is non-replaced, the top and bottom property can be
+            used to fill in the remaining vertical space if height is set
+            to auto. The same would apply horizontally for left and right 
+            properties.
+
+
+            If both top and bottom are set to any value other than
+            auto, top wins.
+            If the language used is ltr (left to right) script then left
+            wins, but if it is a rtl script, then right wins.
+
+            ACCESSIBILITY CONCERNS: Make sure absolutely fixed elements do
+            not obscure the other content when zooming in to increase
+            text size.
+
+            PERFORMANCE CONCERNS: Sticky and fixed elements need
+            to repaint at several points on the browser and may be
+            slow to do so on some browsers/machines and one fix for this
+            can be to use will-change: transform; to render the element in its
+            own layer which improves repaint speed and therefore performance
+            and accessibility.
+        -->
+
+        <div id="absolute">
+            Absolute Box
+
+            <p class="Explainer-pars">
+                Removed from normal flow of the document and 
+                has no space on the created for it in page 
+                layout. It's positioned relative to nearest
+                ancestor. Otherwsie placed relative to nearest
+                containing block.
+                The final position is based on top/bottom/left/right value.
+                <span class="position">Top: 230px; left: 230px</span>
+            </p>
+        </div>
+
+
+        <div id="fixed">
+            Fixed Box
+
+            <p class="Explainer-pars">
+                Removed from normal document flow. Positioned 
+                relative to initial containing block determined by
+                viewport (unless ancestor has filter/perspective/transform or
+                will-change set to transform)
+                Final position based on top/bottom/left/right value.
+                <span class="position">Top: 250px</span>
+            </p>
+        </div>
+
+
+        <div class="sticky">
+            Sticky Box
+
+            <p class="Explainer-pars">
+                Part of normal document flow, then offset relative to
+                nearest scrolling ancestor and and containing block (nearest
+                block-level element) including table related elements based on
+                top/bottom/left/right value. The offset won't affect other elements
+            </p>
+        </div>
+    </div>
+
+    <!-- <div class="sticky">
+        Sticky Box
+
+        <p class="Explainer-pars">
+            This box is relatively positioned until the containing
+            block crosses a specified point (eg: by setting a top value
+            which is not auto) and from there it "sticks" to that point
+            until it meets the end of the containing block.
+        </p>
+    </div> -->
+
+
+
+    <div class="container">
+
+        <div id="static-container">
+            <div id="absolute-practice1">
+                <p class="Explainer-pars">
+                    Absolute box is either going to be positioned
+                    relative to its nearest non-static ancestor or the
+                    initial contianing block.
+                    <span class="Explainer-span">(THIS DIV IS IN A STATIC CONTAINER)</span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div id="positioned-container">
+            <div id="absolute-practice1">
+                <p class="Explainer-pars">
+                    Absolute box is either going to be positioned
+                    relative to its nearest non-static ancestor or the
+                    initial contianing block.
+                    <span class="Explainer-span">(THIS DIV IS IN A RELATIVE CONTAINER)</span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+</body>
+</html>
