@@ -150,9 +150,6 @@ p {
     width: 50px;
     height: 50px;
 }
-.up:hover {
-    background: rgb(69, 88, 66);
-}
 .up:hover .fa-chevron-up {
     font-size: 2rem;
 }
