@@ -1,15 +1,17 @@
 body {
     background: rgba(0, 128, 0, 0.164);
     margin: 0;
+    box-sizing: border-box;
 }
 
 nav {
-    position: relative;
+    position: sticky;
+    top: 0;
     height: 50px;
     width: 100%;
-    background: rgb(247, 245, 245);
     text-align: center;
-    background: rgba(7, 206, 7, 0.527);
+    z-index: 10;
+    background: rgb(70, 168, 70);
 }
 
 .nav-h1 {
@@ -17,6 +19,7 @@ nav {
     margin-top: 0;
     font-size: 2.5em;
     font-family: 'Roboto', sans-serif;
+    color: black;
 }
 
 ul {
@@ -70,44 +73,47 @@ p {
 }
 
 .container {
-    background: rgba(10, 196, 50, 0.377);
     box-sizing: border-box;
     position: relative;
+    text-align: center;
     margin: 100px auto;
     height: 85vh;
     width: 65%;
     box-shadow: 10px 10px 10px 10px #0c0c0c;
     border-radius: 0.5em;
+    background: rgba(10, 196, 50, 0.377);
 }
-
-.con-two {
-    padding-top: 50px;
+.books {
+    position: absolute;
+    top: 60px;
+    font-size: 2.5em;
 }
-
-.sticky-background {
-    position: sticky;
-    display: inline-block;
-    /* Giving display of inline or inline-block makes the left property work */
-    left: 30%;
-    top: 15%;
+.left-book {
+    left: 2%;
+}
+.right-book {
+    right: 2%;
+    transform: scaleX(-1);
+}
+#story-h1 {
+    position: static;
+    opacity: 0.7;
     margin-top: 0;
     margin-bottom: 0;
-    z-index: 1;
-    opacity: 0.3;
+    width: auto;
     color: black;
     font-family: 'Aboreto', cursive;
     text-transform: uppercase;
     font-size: 6em;
 }
 
-.absolute-background {
-    position: absolute;
-    top: 20%;
-    left: 12.5%;
+#mission-h1 {
+    position: static;
     font-size: 6em;
+    margin: 0 0 0;
     z-index: -5;
     color: black;
-    opacity: 0.3;
+    opacity: 0.7;
     font-family: 'Aboreto', cursive;
     text-transform: uppercase;
 }
