@@ -1,5 +1,5 @@
 body {
-    background: white;
+    background: rgba(0, 128, 0, 0.164);
     margin: 0;
 }
 
@@ -16,12 +16,14 @@ nav {
     display: inline-block;
     margin-top: 0;
     font-size: 2.5em;
+    font-family: 'Roboto', sans-serif;
 }
 
 ul {
     display: inline-block;
     position: absolute;
     text-align: center;
+    margin: 10px 0 10px;
     width: 30%;
     right: 0;
 }
@@ -30,6 +32,7 @@ li {
     display: inline-block;
     margin-left: 10px;
     margin-right: 10px;
+    font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -49,7 +52,7 @@ a:after {
     left: 0;
     background-color: black;
     transform-origin: bottom left;
-    transition: transform 0.25s ease-out;
+    transition: transform 0.45s ease-out;
   }
 
   a:hover:after {
@@ -63,6 +66,7 @@ a:after {
 
 p {
     margin: 15px 50px 0;
+    font-family: 'Aboreto', cursive;
 }
 
 .container {
@@ -70,7 +74,7 @@ p {
     box-sizing: border-box;
     position: relative;
     margin: 100px auto;
-    height: 65vh;
+    height: 85vh;
     width: 65%;
     box-shadow: 10px 10px 10px 10px #0c0c0c;
     border-radius: 0.5em;
@@ -84,13 +88,14 @@ p {
     position: sticky;
     display: inline-block;
     /* Giving display of inline or inline-block makes the left property work */
-    left: 35%;
+    left: 30%;
     top: 15%;
     margin-top: 0;
     margin-bottom: 0;
     z-index: 1;
     opacity: 0.3;
     color: black;
+    font-family: 'Aboreto', cursive;
     text-transform: uppercase;
     font-size: 6em;
 }
@@ -98,11 +103,12 @@ p {
 .absolute-background {
     position: absolute;
     top: 20%;
-    left: 20%;
+    left: 12.5%;
     font-size: 6em;
     z-index: -5;
     color: black;
     opacity: 0.3;
+    font-family: 'Aboreto', cursive;
     text-transform: uppercase;
 }
 
