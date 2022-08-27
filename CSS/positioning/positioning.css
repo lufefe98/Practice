@@ -1,0 +1,101 @@
+body {
+    background: white;
+    height: 200vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    background-image: linear-gradient(to right, white, grey);
+    height: 150vh;
+    margin-bottom: 300px;
+}
+
+#static {
+    position: static;
+    /* top: 220px;
+    left: 600px; */
+    /* Top and left are commented out because they do not work
+    on elements with static positions */
+    height: 250px;
+    width: 250px;
+    background-image: linear-gradient(red, blue);
+    margin: auto;
+    text-align: center;
+}
+#relative {
+    position: relative;
+    top: 230px;
+    height: 250px;
+    width: 250px;
+    background-image: linear-gradient(white, blue);
+    margin: auto;
+    text-align: center;
+    z-index: 23;
+}
+#absolute {
+    position: absolute;
+    top: 230px;
+    left: 230px;
+    height: 250px;
+    width: 250px;
+    background-image: linear-gradient(green, blue);
+    margin: auto;
+    text-align: center;
+}
+#fixed {
+    position: fixed;
+    top: 230px;
+    height: 250px;
+    width: 250px;
+    background-image: linear-gradient(grey, blue);
+    margin: auto;
+    text-align: center;
+}
+.sticky {
+    position: sticky;
+    height: 250px;
+    width: 250px;
+    top: 500px;
+    background-image: linear-gradient(yellow, blue);
+    margin: auto;
+    text-align: center;
+}
+
+.Explainer-pars {
+    color: white;
+    font-size: large;
+}
+.position {
+    display: block;
+    margin-top: 10px;
+    color: black;
+}
+
+
+
+#static-container {
+    background-image: linear-gradient(to right, black, yellow);
+    height: 500px;
+    width: 80%;
+    margin: 100px auto 0;
+}
+#positioned-container {
+    position: relative;
+    background-image: linear-gradient(to right, black, yellow);
+    height: 500px;
+    width: 80%;
+    margin: 100px auto 0;
+}
+#absolute-practice1 {
+    position: absolute;
+    background: black;
+    height: 350px;
+    width: 350px;
+    right: 5px;
+}
+.Explainer-span {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+}
