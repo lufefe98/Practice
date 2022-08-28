@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="background-images.css">
+
+    <!-- Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Roboto&display=swap" rel="stylesheet">
+    
+
+    <title>Background Image Practice</title>
+</head>
+<body>
+    <h1>Making Transparent Background Image</h1>
+
+
+    <div class="container1">
+
+        <h1 class="heading">
+           Transparent Background Image
+        </h1>
+
+        <p>
+          I have been finding it difficult to adjust the opacity of a background image
+          which is something I wanted to learn how to do, so I went on the internet
+          in search of solutions and what I found from 
+          <a href="https://coder-coder.com/background-image-opacity/">
+            Coder Coder
+          </a>
+          is that you need to use the <span>::before</span> psuedo element on the element you
+          want to set it on and include the background image on the
+          psuedo element of the parent element.
+          <br>
+          Once you have done this you need to position it absolutely and
+          then give the top, bottom, left and right proprties a value of 
+          0 and then set the content property.
+          <br>
+          It is also important to set the elements that will be above the
+          background image to relative to prevent them from being overlayed
+          by the <span>::before</span> psuedo element. From there it is possible
+          to set the opacity of the background image.
+        </p>
+
+        <p>
+            The <span>::before</span> psuedo element creates a layer
+            above the parent element, setting the position to absolute
+            and giving all sides a value of 0 will prevent the image from
+            collapsing/not appearing.
+        </p>
+
+    </div>
+
+    <div class="container2">
+
+        <h1 class="heading">
+           An alternative
+        </h1>
+
+        <p>
+            An alternative to the first solution is to keep the background 
+            image on the parent element and then use the <span>::before</span> psuedo element
+            to create an overlay with the color black (0, 0, 0) in rgb in the
+            background color and then setting the opacity with the alpha 
+            channel, but still keeping the same positioning as
+            before.
+        </p>
+
+        <p>
+            This solution is also helpful if you want to create an overlay
+            with a colorful overlay.
+        </p>
+
+    </div>
+
+</body>
+</html>

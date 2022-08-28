@@ -1,0 +1,93 @@
+body {
+    background: rgba(0, 128, 0, 0.164);
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.container1 {
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    margin: 100px auto;
+    padding: 20px 10px 20px;
+    height: auto;
+    width: 65%;
+    box-shadow: 10px 10px 10px 10px #0c0c0c;
+    border-radius: 0.5em;
+}
+.container1::before {
+    content: "";
+    background-image: url(https://images.unsplash.com/photo-1550399105-c4db5fb85c18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Ym9va3N8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.45;
+}
+
+.container2 {
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    margin: 100px auto;
+    padding: 20px 10px 20px;
+    height: auto;
+    width: 65%;
+    box-shadow: 10px 10px 10px 10px #0c0c0c;
+    border-radius: 0.5em;
+    background-size: cover;
+    background-image: url(https://images.unsplash.com/photo-1550399105-c4db5fb85c18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Ym9va3N8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
+}
+.container2:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(240, 240, 240, 0.45);
+    border-radius: 0.5em;
+}
+
+/* Psuedo element of ::before is used to create a layer on which a  */
+p {
+    position: relative;
+    /* Position must be set to anything other than static
+    to make sure it is not overlayed by the psuedo-element of
+    ::before */
+    margin: 15px 50px 30px;
+    opacity: 1;
+    z-index: 20;
+    font-weight: 900;
+    font-family: 'Aboreto', cursive;
+}
+
+a {
+    color: yellow;
+    text-decoration: none;
+}
+a:hover {
+    color: purple;
+    text-decoration: solid underline;
+}
+
+span {
+    color: red;
+    text-decoration: solid underline;
+    font-size: 1.2em;
+}
+
+.heading {
+    position: static;
+    opacity: 0.9;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: auto;
+    color: black;
+    font-family: 'Aboreto', cursive;
+    text-transform: uppercase;
+    font-size: 3em;
+}
