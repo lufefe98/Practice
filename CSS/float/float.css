@@ -1,0 +1,94 @@
+body {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    font: .9em/1.2 Arial, Helvetica, sans-serif;
+  }
+  
+  .box {
+    float: left;
+    /* 
+    What happens when this is used is that it moves the div
+    out of the normal flow of the document and stuck to a specified
+    side  of the parnet container and then the content that is
+    part of the normal document flow wraps itself around the
+    floated element.
+     */
+    margin-right: 15px;
+    /* 
+    The margin that is set on the floated element is used because
+    the box of the elements that are still part of the normal flow
+    of the document can still run behind the floated element
+    because it is no longer part of the normal flow of the document
+    and therefore 
+    */
+    width: 150px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: rgb(207,232,220);
+    padding: 1em;
+  }
+  .box2 {
+    float: left;
+    margin-right: 15px;
+    width: 150px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: rgb(207,232,220);
+    padding: 1em;
+  }
+
+  .wrapper1 {
+    background-color: rgb(79,185,227);
+    padding: 10px;
+    color: #fff;
+  }
+  
+  .cleared {
+    clear: left;
+    /* 
+    This removes the float and prevents the specified element
+    from being wrapped around the floated element and moves it onto
+    a new line/stops it from moving up.
+    This is helpful for clearing items that follow a floated element
+    */
+  }
+
+  .wrapper1::after {
+    content: "";
+    clear: both;
+    display: block;
+    /* This is the equivelant of putting a div after the float
+    and using clear: both */
+  }
+
+  .wrapper2 {
+    background-color: rgb(79,185,227);
+    padding: 10px;
+    color: #fff;
+    overflow: auto;
+    /* This is an alternative which works by setting overflow
+    to anything other than "visible"
+    
+    This works by setting a "Block formatting context", which is 
+    like a mini layout inside the page where everyhting is contained;
+    meaning the floated element is contained inside the bfc and the
+    background runs behind both items (the floated element and the
+    element which next to the floated element)
+    NB: This MIGHT cause unwanted scroll bars or clipped shadows as
+    unintended consequences.
+    */
+  }
+
+  .wrapper3 {
+    background-color: rgb(79,185,227);
+    padding: 10px;
+    color: #fff;
+    display: flow-root;
+    /* This is a more recent and better solution to clearing floats
+    which uses a bfc, but unlinke the overflow solution, this does
+    not lead to any uninteded consequences.
+
+    (This might not work on some browsers)
+    */
+  }
