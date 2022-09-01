@@ -13,3 +13,26 @@ body {
 .nav-h1 {
     margin: 0 auto 0;
 }
+
+.left {
+    float: left;
+    height: 450vh;
+    width: 25%;
+    margin-right: 10px;
+    margin-top: 5px;
+    font-size: 3em;
+    border-right: 1px solid rgba(0, 0, 0, 0.205);
+}
+ul {
+    position: sticky;
+    top: 5%;
+}
+li {
+    margin: 5% auto ;
+}
+
+.main {
+    margin-left: 20px;
+    margin-top: 5px;
+    width: 67%;
+}
