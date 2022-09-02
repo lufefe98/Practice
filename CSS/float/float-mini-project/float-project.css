@@ -31,7 +31,7 @@ a:hover {
     explicit height for it to span the height of the page and match
     the amount of height taken by the main div, but this is
     just for demonstration purposes at the moment */
-    height: 375vh;
+    height: 420vh;
     width: 25%;
     margin-right: 30px;
     margin-top: 5px;
@@ -40,24 +40,35 @@ a:hover {
 }
 ul {
     position: sticky;
-    top: 10%;
+    top: 17%;
     margin-right: 25px;
 }
 li {
     margin: 5% auto ;
     list-style: none;
+    border-radius: 2px;
+    width: 100%;
+    background: rgb(194, 194, 194);
 }
 
 .main {
     margin-left: 20px;
+    margin-right: 10px;
     margin-top: 5px;
+    overflow: hidden;
+    /* Hides the overflow from the .post so I can add a background
+    color without impacting the appearance of the list items in .left */
     width: auto;
 }
 .post {
+    box-sizing: border-box;
     clear: right;
     /* Prevents images from impacting the next post */
     width: 100%;
-    margin: 5% auto;
+    margin: 7.5% auto;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgb(194, 194, 194);
 }
 img {
     float: right;
@@ -68,4 +79,8 @@ img {
 .img-left {
     float: left;
     margin-right: 10px;
+}
+.container {
+    height: auto;
+    width: auto;
 }
