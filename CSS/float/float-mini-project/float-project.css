@@ -12,10 +12,13 @@ a:hover {
 }
 
 .navbar {
+    position: sticky;
+    top: 0;
     width: 100%;
     height: 15%;
     text-align: center;
     font-size: 2rem;
+    background: rgba(128, 128, 128);
     border-bottom: 1px solid rgba(0, 0, 0, 0.205);
 }
 .nav-h1 {
@@ -24,7 +27,11 @@ a:hover {
 
 .left {
     float: left;
-    height: 400vh;
+    /* Float is not exactly an efficient solution because I have to set an
+    explicit height for it to span the height of the page and match
+    the amount of height taken by the main div, but this is
+    just for demonstration purposes at the moment */
+    height: 375vh;
     width: 25%;
     margin-right: 30px;
     margin-top: 5px;
@@ -33,7 +40,7 @@ a:hover {
 }
 ul {
     position: sticky;
-    top: 5%;
+    top: 10%;
     margin-right: 25px;
 }
 li {
