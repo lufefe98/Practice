@@ -27,7 +27,7 @@ a:hover {
 
 .left {
     float: left;
-    /* Float is not exactly an efficient solution because I have to set an
+    /* Float is not exactly an efficient/scalable solution because I have to set an
     explicit height for it to span the height of the page and match
     the amount of height taken by the main div, but this is
     just for demonstration purposes at the moment */
@@ -79,8 +79,4 @@ img {
 .img-left {
     float: left;
     margin-right: 10px;
-}
-.container {
-    height: auto;
-    width: auto;
 }
