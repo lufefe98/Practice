@@ -3,6 +3,11 @@ body {
     margin: 0;
 }
 
+
+
+
+
+/* Texts */
 a {
     text-decoration: none;
     color: black;
@@ -10,7 +15,24 @@ a {
 a:hover {
     text-decoration: underline solid black 5px;
 }
+p {
+    font-family: 'Work Sans', sans-serif;
+}
+li {
+    font-family: 'Merriweather', serif;
+}
+h1 {
+    font-family: 'Merriweather', serif;
+}
+h2 {
+    font-family: 'Merriweather', serif;
+}
 
+
+
+
+
+/* Navbar */
 .navbar {
     position: sticky;
     top: 0;
@@ -25,13 +47,18 @@ a:hover {
     margin: 0 auto 0;
 }
 
+
+
+
+
+/* Left sidebar */
 .left {
     float: left;
     /* Float is not exactly an efficient/scalable solution because I have to set an
     explicit height for it to span the height of the page and match
     the amount of height taken by the main div, but this is
     just for demonstration purposes at the moment */
-    height: 420vh;
+    height: 465vh;
     width: 25%;
     margin-right: 30px;
     margin-top: 5px;
@@ -51,6 +78,11 @@ li {
     background: rgb(194, 194, 194);
 }
 
+
+
+
+
+/* Main content */
 .main {
     margin-left: 20px;
     margin-right: 10px;
