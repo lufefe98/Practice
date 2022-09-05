@@ -2,7 +2,7 @@ body {
     background: rgb(194, 193, 193);
 }
 
-.container {
+.container-1 {
     background: black;
     display: grid;
     /* The above does not change anything yet, the grid items still
@@ -15,8 +15,40 @@ body {
    vertical columns of 200px in width. 
     */
 }
+.container-2 {
+    background: black;
+    margin-bottom: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* The 1fr unit allows grid items to take up 1 fraction
+    of the available space, so unlike in the first container where
+    the grid items took up 200px of the space in the container and 
+    then leave the rest of the space going across the container, the
+    grid items which use the 1fr unit take up as much of the remaining
+    space as possible and fill up the container according to the
+    direction which it is set to go in. */
+}
+.container-3 {
+    background: black;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    /* Depending on how many units of the available space you set
+    the grid item to take, it will expand accordingly and take up
+    the specified amount of space. In this case, where there are
+    3 grid template columns, where the first grid item is set to 2fr, the
+    amount of space it will take up is 2 thirds of the space and the
+    other 2 will take up the remaining third. */
+}
 
-.container > div {
+.container-1 > div {
+    border-radius: 5px;
+    padding: 10px;
+}
+.container-2 > div {
+    border-radius: 5px;
+    padding: 10px;
+}
+.container-3 > div {
     border-radius: 5px;
     padding: 10px;
 }
