@@ -59,8 +59,18 @@ body {
     /* 
     The first value determines how many tracks you want and the 2nd
     value is for the size of each track (It is possible to set more than
-    one value when determining the size of each grid item)
+    one value when determining the size of each grid item).
+    NB: How many values you enter after the first value will determine
+    how many grid items you have per listing and how much space they
+    will take up.
     */
+    gap: 10px;
+}
+.container-6 {
+    background: black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 100px;
     gap: 10px;
 }
 
@@ -81,6 +91,10 @@ body {
     padding: 10px;
 }
 .container-5 > div {
+    border-radius: 5px;
+    padding: 10px;
+}
+.container-6 > div {
     border-radius: 5px;
     padding: 10px;
 }
