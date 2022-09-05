@@ -89,7 +89,23 @@ body {
     /* 
     The above helps to set a minimum and maximum size for the content
     just in case it happens to become too large to fit within the
-    space that is set by a single value
+    space that is set by a single value.
+    */
+    gap: 10px;
+}
+.container-8 {
+    background: black;
+    display: grid;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* 
+    To make use of the "As many columns as will fit", we make use
+    of the repeat() function, but instead of using a number for the
+    first parameter, we pass in the keyword auto-fill, and then for 
+    the 2nd parameter, we make use of the minmax function where
+    we enter the minimum and maximum values.
+    The auto-fill is what makes the grid layout allow
+    "as many as will fit".
     */
     gap: 10px;
 }
@@ -119,6 +135,10 @@ body {
     padding: 10px;
 }
 .container-7 > div {
+    border-radius: 5px;
+    padding: 10px;
+}
+.container-8 > div {
     border-radius: 5px;
     padding: 10px;
 }
