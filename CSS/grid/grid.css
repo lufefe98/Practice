@@ -52,7 +52,17 @@ body {
     The short-hand of gap is also useful for other types of layouts.
     */
 }
-
+.container-5 {
+    background: black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 
+    The first value determines how many tracks you want and the 2nd
+    value is for the size of each track (It is possible to set more than
+    one value when determining the size of each grid item)
+    */
+    gap: 10px;
+}
 
 .container-1 > div {
     border-radius: 5px;
@@ -70,7 +80,10 @@ body {
     border-radius: 5px;
     padding: 10px;
 }
-
+.container-5 > div {
+    border-radius: 5px;
+    padding: 10px;
+}
 
 div {
     background: yellow;
