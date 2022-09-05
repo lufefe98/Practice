@@ -1,3 +1,27 @@
 body {
     background: rgb(194, 193, 193);
 }
+
+.container {
+    background: black;
+    display: grid;
+    /* The above does not change anything yet, the grid items still
+    display as one grid item stacked on top of another grid item
+     */
+    grid-template-columns: 200px 200px 200px;
+    /* The above is where things change and is where you start to
+    dictate how things are layed out using grid.
+   In the above example, the layout has been changed to have 3
+   vertical columns of 200px in width. 
+    */
+}
+
+.container > div {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.box {
+    background: yellow;
+    border: solid 1px grey;
+}
