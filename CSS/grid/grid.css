@@ -39,6 +39,20 @@ body {
     amount of space it will take up is 2 thirds of the space and the
     other 2 will take up the remaining third. */
 }
+.container-4 {
+    background: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    /* You can not use fr units to make gaps
+    Also, gap is short-hand for creating gaps between the rows and
+    columns of a grid.
+    A grid column-gap will create vertical gaps and row-gap creates
+    horizontal gaps.
+    The short-hand of gap is also useful for other types of layouts.
+    */
+}
+
 
 .container-1 > div {
     border-radius: 5px;
@@ -52,8 +66,13 @@ body {
     border-radius: 5px;
     padding: 10px;
 }
+.container-4 > div {
+    border-radius: 5px;
+    padding: 10px;
+}
 
-.box {
+
+div {
     background: yellow;
     border: solid 1px grey;
 }
