@@ -71,6 +71,26 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 100px;
+    /* 
+    When you use the grid-template you are setting the explicit grid 
+    and determining whatever you set after it (be it coumns or rows), but
+    what is being used to hold the content is going to be in the 
+    implicit grid which is created using grid-auto-column/row and this
+    will set whatever is outside of the explicit grid (In this case, it would
+    be in the rows).
+    */
+    gap: 10px;
+}
+.container-7 {
+    background: black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    /* 
+    The above helps to set a minimum and maximum size for the content
+    just in case it happens to become too large to fit within the
+    space that is set by a single value
+    */
     gap: 10px;
 }
 
@@ -95,6 +115,10 @@ body {
     padding: 10px;
 }
 .container-6 > div {
+    border-radius: 5px;
+    padding: 10px;
+}
+.container-7 > div {
     border-radius: 5px;
     padding: 10px;
 }
