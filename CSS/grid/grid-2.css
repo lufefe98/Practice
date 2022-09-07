@@ -82,8 +82,9 @@ hr {
     display: grid;
     grid-template-areas:
     "header header"
+    /* If you want to have an empty area, use a full stop */
     "sidebar content"
-    "footer footer";
+    "sidebar footer";
     /* 
     How this works is that you give names to the various grid areas
     as a template and they should be as many grid items as set in the
@@ -93,6 +94,7 @@ hr {
     Whenever one of the template areas are removed, the rest of the
     content collapses in on itself and is overlapped by the last
     element, which us this case, is the footer.
+    It is not allowed to have an "L" shaped area.
     */
     grid-template-columns: 1fr 3fr;
     gap: 20px;
@@ -103,6 +105,8 @@ hr {
     /* Adding the template name to an element which is in the container
     will place the grid item as it is placed in the template from the
     container.
+    It is not allowed to repeat a template area when specifying
+    a specific elements grid area.
     */
   }
   
