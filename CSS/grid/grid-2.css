@@ -2,7 +2,11 @@ body {
     background: #fff;
 }
 
-.container1 {
+
+/* Line based placement */
+
+
+.container {
     display: grid;
     grid-template-columns: 1fr 3fr;
     /* This is the template that will determine the size of the items
@@ -12,15 +16,15 @@ body {
     grid-gap: 20px;
 }
 
-.header1,
-.footer1 {
+header,
+footer {
     border-radius: 5px;
     padding: 10px;
     background-color: rgb(207,232,220);
     border: 2px solid rgb(79,185,227);
 }
 
-.header1 {
+header {
     grid-column: 1 / 3;
     /* 
     Grids have lines and they start from 1 and relate to the writing
@@ -47,18 +51,18 @@ body {
     axis. The same applies with grid-columns.
     */
 }
-.footer1 {
+footer {
     grid-column: 1 / 3;
     grid-row: 3;
 }
 
-.aside1 {
+aside {
     border-right: 1px solid #999;
     grid-column: 1;
     grid-row: 2;
 }
 
-.article1 {
+article {
     grid-column: 2;
     grid-row: 2;
 }
@@ -66,7 +70,50 @@ body {
 hr {
     height: 2px;
     width: 100%;
-    margin-top: 5%;
+    margin: 5% auto 5%;
     border: black dashed 1px;
     background: rgb(15, 252, 252);
 }
+
+
+/* Grid template areas */
+
+.container {
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+    /* 
+    How this works is that you give names to the various grid areas
+    as a template and they should be as many grid items as set in the
+    grid-template areas.
+    They templates can be named anything (Though they should be 
+    meaningful names)
+    Whenever one of the template areas are removed, the rest of the
+    content collapses in on itself and is overlapped by the last
+    element, which us this case, is the footer.
+    */
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+}
+
+.header2 {
+    grid-area: header;
+    /* Adding the template name to an element which is in the container
+    will place the grid item as it is placed in the template from the
+    container.
+    */
+  }
+  
+  .article2 {
+    grid-area: content;
+  }
+  
+  .aside2 {
+    grid-area: sidebar;
+  }
+  
+  .footer2 {
+    grid-area: footer;
+  }
