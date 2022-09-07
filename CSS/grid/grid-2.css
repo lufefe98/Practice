@@ -2,7 +2,7 @@ body {
     background: #fff;
 }
 
-.container {
+.container1 {
     display: grid;
     grid-template-columns: 1fr 3fr;
     /* This is the template that will determine the size of the items
@@ -12,15 +12,15 @@ body {
     grid-gap: 20px;
 }
 
-header,
-footer {
+.header1,
+.footer1 {
     border-radius: 5px;
     padding: 10px;
     background-color: rgb(207,232,220);
     border: 2px solid rgb(79,185,227);
 }
 
-header {
+.header1 {
     grid-column: 1 / 3;
     /* 
     Grids have lines and they start from 1 and relate to the writing
@@ -47,18 +47,26 @@ header {
     axis. The same applies with grid-columns.
     */
 }
-footer {
+.footer1 {
     grid-column: 1 / 3;
     grid-row: 3;
 }
 
-aside {
+.aside1 {
     border-right: 1px solid #999;
     grid-column: 1;
     grid-row: 2;
 }
 
-article {
+.article1 {
     grid-column: 2;
     grid-row: 2;
+}
+
+hr {
+    height: 2px;
+    width: 100%;
+    margin-top: 5%;
+    border: black dashed 1px;
+    background: rgb(15, 252, 252);
 }
