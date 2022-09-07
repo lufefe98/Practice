@@ -78,7 +78,7 @@ hr {
 
 /* Grid template areas */
 
-.container {
+.container2 {
     display: grid;
     grid-template-areas:
     "header header"
@@ -100,7 +100,7 @@ hr {
     gap: 20px;
 }
 
-.header2 {
+header {
     grid-area: header;
     /* Adding the template name to an element which is in the container
     will place the grid item as it is placed in the template from the
@@ -110,14 +110,46 @@ hr {
     */
   }
   
-  .article2 {
+  article {
     grid-area: content;
-  }
+  }  
   
-  .aside2 {
+  aside {
     grid-area: sidebar;
   }
   
-  .footer2 {
+  footer {
     grid-area: footer;
   }
+
+/* Grid Frameworks */
+
+.container3 {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0,1fr));
+    /* 
+    The grid framework tends to have 12 to 16 column grids and
+    uses line based placemet to place grid items.    
+    */
+    grid-gap: 20px;
+}
+
+.header3 {
+    grid-column: 1 / 13;
+    grid-row: 1;
+}
+  
+.article3 {
+    grid-column: 4 / 13;
+    grid-row: 2;
+}  
+  
+.aside3 {
+    grid-column: 1 / 4;
+    grid-row: 2;
+}
+  
+.footer3 {
+    grid-column: 1 / 13;
+    grid-row: 3;
+}
