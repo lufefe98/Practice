@@ -1,0 +1,125 @@
+body {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    background: rgba(128, 128, 128, 0.315);
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+/* 
+Created a container to implement a grid layout on the sidebar
+and the main container.
+*/
+
+
+
+
+/* Texts */
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    text-decoration: underline solid black 5px;
+}
+p {
+    font-family: 'Work Sans', sans-serif;
+}
+li {
+    font-family: 'Merriweather', serif;
+}
+h1 {
+    font-family: 'Merriweather', serif;
+}
+h2 {
+    font-family: 'Merriweather', serif;
+}
+
+
+
+
+
+/* Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    height: 100%;
+    /* 
+    Gave navbar a height of 100% to fit the height of the grid
+    */
+    text-align: center;
+    font-size: 2rem;
+    background: rgba(128, 128, 128);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+}
+.nav-h1 {
+    margin: 0 auto 0;
+}
+
+
+
+
+
+/* Left sidebar */
+.left {
+    margin-right: 30px;
+    margin-top: 5px;
+    font-size: 3em;
+    border-right: 1px solid rgba(0, 0, 0, 0.205);
+}
+/* 
+Because of the grid layout, the left sidebar does not require a 
+height to match the height of the main container.
+*/
+ul {
+    position: sticky;
+    top: 17%;
+    margin-right: 25px;
+}
+li {
+    margin: 5% auto ;
+    list-style: none;
+    border-radius: 2px;
+    width: 100%;
+    background: rgb(194, 194, 194);
+}
+
+
+
+
+
+/* Main content */
+.main {
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+/* 
+The main container no longer requires a hidden overflow because
+the left sidebar is no longer outside of the flow of the
+document because of the float property.
+*/
+.post {
+    box-sizing: border-box;
+    clear: right;
+    width: 100%;
+    margin: 5% auto 7.5%;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgb(194, 194, 194);
+}
+img {
+    float: right;
+    margin: 10px 10px 10px;
+    max-height: 450px;
+    border-radius: 5px;
+}
+.img-left {
+    float: left;
+    margin-right: 10px;
+}
