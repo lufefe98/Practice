@@ -120,7 +120,7 @@ li {
     box-sizing: border-box;
     clear: right;
     width: 100%;
-    margin: 7.5% auto;
+    margin: 5% auto 7.5%;
     padding: 10px;
     border-radius: 5px;
     background: rgb(194, 194, 194);
