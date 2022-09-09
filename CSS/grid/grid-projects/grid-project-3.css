@@ -99,6 +99,7 @@ nav {
     background-position: center center;
     display: flex;
     flex-direction: column;
+    margin-bottom: 5%;
     width: 100%;
     height: 50vh;
 }
@@ -129,10 +130,16 @@ hr.hr-5 {
     grid-template-areas:
         "left right"
         "wide wide";
+    /* 
+    The aim for the container is to have 2 vertical rectangles above
+    one horizontal rectangle, hence the template that is used above.
+    */
     grid-template-columns: 1fr 1fr;
+    /* 
+    The columns must be equal in their width.
+    */
     gap: 10px;
-    margin: 10px auto 10px;
-    padding: 5px;
+    margin: 5px auto 5%;
     max-width: 90%;
     box-sizing: border-box;
 }
@@ -140,20 +147,32 @@ hr.hr-5 {
 .collection1 {
     grid-area: left;
     display: grid;
-    grid-template-columns: repeat(autofill, minmax(0, auto));
-    gap: 5px;
-    margin: 5px;
-    padding: 5px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "top-left top-right"
+    "across across";
+    /* 
+    Grid template areas were used because they were the most
+    feasible solution for getting to the a layout of 2 square
+    images at the top of the container and one vertical rectangle
+    at the bottom.
+    */
+    gap: 2px;
     box-sizing: border-box;
     box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.25);
 }
 .collection2 {
     grid-area: right;
     display: grid;
-    grid-template-columns: repeat(autofill, minmax(45%, auto));
-    gap: 5px;
-    margin: 5px;
-    padding: 5px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "across across"
+    "bottom-left bottom-right";
+    /* 
+    The aim with this layout is the same as .collection1, but it
+    is just turned upside down.
+    */
+    gap: 2px;
     box-sizing: border-box;
     box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.25);
 }
@@ -161,13 +180,31 @@ hr.hr-5 {
     grid-area: wide;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 5px;
-    margin: 5px;
-    padding: 5px;
+    gap: 2px;
     box-sizing: border-box;
     box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.25);
 }
 img {
     width: 100%;
     height: 100%;
+}
+/* 
+The images should fit in the grid that they are placed within.
+Giving them a height and width achieves that, without having to
+deal with any overflow.
+*/
+.top-left {
+    grid-area: top-left;
+}
+.top-right {
+    grid-area: top-right;
+}
+.bottom-left {
+    grid-area: bottom-left;
+}
+.bottom-right {
+    grid-area: bottom-right;
+}
+.across {
+    grid-area: across;
 }
