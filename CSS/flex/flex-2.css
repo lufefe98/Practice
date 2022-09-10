@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+}
+
+header {
+    background: purple;
+    height: 100px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    line-height: 100px;
+    margin: 0;
+}
+
+article {
+    flex: 200px;
+    padding: 10px;
+    margin: 10px;
+    background: aqua;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 200px;
+    /* 
+    In the case that there are too many flex items to fit in the
+    width/height which leads to an overflow from a container, the
+    wrap value pushes the flex items onto the next line keeps
+    the layout.
+    This declaration has to be added to the parent container.
+    
+    NB: It is possible to reverse the order of the flex items by
+    using the row/column-reverse value.
+
+
+    A short-hand for this is to use flex-flow value where the
+    direction and the wrap can both be determined.
+    */
+}
