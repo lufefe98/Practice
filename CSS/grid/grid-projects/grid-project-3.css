@@ -217,7 +217,6 @@ deal with any overflow.
 
 
 
-/* NAVBAR */
 
 /* Footer */
 footer {
@@ -225,7 +224,6 @@ footer {
     flex-direction: column;
     justify-content: center;
     bottom: 0;
-    height: 20%;
     width: 100%;
     margin-top: 5%;
     margin-bottom: 0px;
