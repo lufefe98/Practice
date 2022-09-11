@@ -31,8 +31,6 @@ body {
     to the start point of the cross axis) and flex end
     (Aligns items to the end point of the cross axis)
 
-    Align-self overrides the align-items property if a specific
-    flex item is targeted.
     */
     justify-content: space-around;
     /* 
@@ -44,7 +42,34 @@ body {
     an equal amount of space on either side.
      NB: Space between is similar to space-around, but differs
      in that it doesn't leave space at either end.
+     Justify-items is ignored in flex layouts
     */
     height: 100px;
     border: 1px solid black;
+  }
+
+  button:first-child {
+    align-self: flex-end;
+    /* 
+    Align-self overrides the align-items property and targets 
+    individual flex items.
+    */
+    order: 1;
+    /* 
+    It is possible to change the order of flex items without affecting
+    the order of the original flex items. 
+    (This is not possible to do with other traditional layout methods)
+
+
+    1. The default order value for all flex items is 0, 
+    2. Flex items with the same order value will appea in their
+    original order
+    */
+  }
+  button:last-child {
+    order: -1;
+    /* 
+    It is possible to set negative values, which have the effect
+    of appearing before flex items with a value of 0.
+    */
   }
