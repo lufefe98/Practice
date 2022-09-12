@@ -1,0 +1,75 @@
+body {
+    width: 70%;
+    max-width: 960px;
+    margin: 20px auto;
+  }
+
+  button {
+    font-size: 18px;
+    line-height: 1.5;
+    width: 15%;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    /* 
+    Align items controls where flex items sit on the cross axis
+    (ie: Perpendicular to the main axis).
+    therefore, if the flex direction is row, then a value of
+    align-items that is set to center will align the flex items
+    along the vertical axis.
+
+    The defaut for the align-items is stretch, which stretches the
+    flex items to fill the parent in the direction of the cross 
+    axis.
+        - If the parent doesn't have an explicit height set in the
+        cross direction, then the flex items will be equal to the
+        tallest flex item
+    
+    The other values for align-items are flex-start (Aligns items
+    to the start point of the cross axis) and flex end
+    (Aligns items to the end point of the cross axis)
+
+    */
+    justify-content: space-around;
+    /* 
+    Justify content controls where the flex items are aligned
+    along the main axis.
+
+    The default for justify-content is flex-start
+    The above value sorts items out evenly and then gives them
+    an equal amount of space on either side.
+     NB: Space between is similar to space-around, but differs
+     in that it doesn't leave space at either end.
+     Justify-items is ignored in flex layouts
+    */
+    height: 100px;
+    border: 1px solid black;
+  }
+
+  button:first-child {
+    align-self: flex-end;
+    /* 
+    Align-self overrides the align-items property and targets 
+    individual flex items.
+    */
+    order: 1;
+    /* 
+    It is possible to change the order of flex items without affecting
+    the order of the original flex items. 
+    (This is not possible to do with other traditional layout methods)
+
+
+    1. The default order value for all flex items is 0, 
+    2. Flex items with the same order value will appea in their
+    original order
+    */
+  }
+  button:last-child {
+    order: -1;
+    /* 
+    It is possible to set negative values, which have the effect
+    of appearing before flex items with a value of 0.
+    */
+  }
