@@ -1,0 +1,314 @@
+body {
+    margin: 0;
+    background: #fff
+}
+
+
+
+
+
+/* Tetxs */
+.main-h1 {
+    color: #fff;
+    font-size: 5rem;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+
+
+/* Navbar */
+#check {
+    display: none;
+}
+label #btn, label #cancel {
+    position: absolute;
+    cursor: pointer;
+    background: #fdfdfd;
+    border-radius: 3px;
+}
+label #btn {
+    width: 25px;
+    height: 25px;
+    right: 20px;
+    top: 5px;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 50px;
+    padding: 6px 12px;
+    color: black;
+    transition: all .5s;
+}
+label #cancel {
+    display: none;
+    z-index: 1111;
+    height: 25px;
+    width: 20px;
+    position: fixed;
+    right: -22%;
+    padding: 4px 9px;
+    border-radius: 60px;
+    font-size: 25px;
+    text-align: center;
+    background: #fff;
+    color: black;
+    transition: all .8s ease;
+}
+#check:checked ~ .sidebar {
+    right: 0;
+}
+#check:checked ~ label #btn {
+    right: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+#check:checked ~ label #cancel {
+    display: block;
+    right: 0.5%;
+}
+nav {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10%;
+    font-size: 1.75rem;
+    z-index: 1000;
+}
+#head-h1 {
+    position: relative;
+    z-index: 10;
+    float: left;
+    width: 100%;
+    margin-top: 2%;
+    margin-left: 10%;
+    text-align: center;
+    opacity: 1;
+    color: #fff;
+    font-family: 'Allura', cursive;
+}
+
+
+
+
+
+/* Header */
+#gallery-head {
+    background: url("https://images.unsplash.com/photo-1578985824626-945a6f546304?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5%;
+    width: 100%;
+    height: 50vh;
+}
+
+.header-intro {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 20%;
+    height: 20%;
+    color: white;
+}
+
+hr.hr-5 {
+    display: block;
+    border: 5px;
+    border-top: 3px double #fff;
+}
+
+
+
+
+
+/* Image Layout */
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    /* 
+    The wrap moves the images to the next line and prevents an
+    overflow of the content.
+    This is specifically done to move the 3rd collection to wrap
+    onto the next line.
+    */
+    justify-content: center;
+    /* 
+    Keeps the content centered along the main axis (horizontally)
+    in order to achived a more centralized layout.
+    */
+    margin: 5px auto 5%;
+    max-width: 90%;
+    box-sizing: border-box;
+}
+
+.collection1 {
+    display: flex;
+    flex-flow: row wrap;
+    /* 
+    This is done to move the .rectangle container onto the next
+    line and prevent it from taking being on the same line as the
+    .square image containers
+    */
+    flex: 48%;
+    /* 
+    The size of 48% was chosen because it is the closest available
+    size which can be used to take up roughly half of the container
+    while still allowing for margins between all the other .collection
+    containers, otherwise if any higher values were chosen, the 
+    result would be the wrap effect coming into play and pushing
+    the next line and therefore causing this container to take up
+    100% of the width of its container.
+    The same was done in .collection2
+    */
+    margin: 5px;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.25);
+}
+.collection2 {
+    display: flex;
+    flex-flow: row wrap;
+    /* 
+    The wrap is done to achieve the same result as in .collection1
+    with the image container of .rectangle
+    */
+    flex: 48%;
+    margin: 5px;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.25);
+}
+.collection3 {
+    display: flex;
+    flex: 100%;
+    flex-direction: row;
+    justify-content: center;
+    /* 
+    Done to prevent the images and their containers from being
+    stuck to the start of the container rather than the desired
+    centralised appearance.
+    */
+    margin: 5px;
+    max-width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+.top-square1 {
+    width: 49.7%;
+    /* 
+    I opted against the use of the flex short hand property because
+    width is better at containing the overflow of the image which
+    the .top-square1 contains.
+    The same was done for all the other images
+    */
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+.top-square2 {
+    width: 49.7%;
+    margin-left: 2px;
+    margin-right: -3px;
+    margin-bottom: 2px;
+}
+
+.bottom-square1 {
+    width: 49.7%;
+    margin-right: 2px;
+    margin-top: 2px;
+}
+.bottom-square2 {
+    width: 49.7%;
+    margin-left: 2px;
+    margin-right: -3px;
+    margin-top: 2px;
+}
+
+.rectangle {
+    width: 100%;
+}
+
+.wide-img {
+    width: 33.33%;
+}
+.wide-img:nth-of-type(2) {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+
+.top-square1 img {
+    width: 100%;
+    height: 100%;
+}
+.top-square2 img {
+    width: 100%;
+    height: 100%;
+}
+    
+.bottom-square1 img {
+    width: 100%;
+    height: 100%;
+}
+.bottom-square2 img {
+    width: 100%;
+    height: 100%;
+}
+
+.rectangle img {
+    width: 100%;
+    height: 100%;
+}
+
+.wide-img img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 
+The width and height of 100% was chose to make sure the images
+stays within the boundaries of their containers
+*/
+
+
+
+
+
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 0px;
+    padding-top: 2.5%;
+    background: #222;
+}
+.footer-brand {
+    display: inline-block;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Allura', cursive;
+}
+.footer-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 33%;
+    margin: auto;
+    margin-bottom: 5%;
+}
