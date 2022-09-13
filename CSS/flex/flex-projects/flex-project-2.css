@@ -2,3 +2,48 @@ body {
     margin: 0;
     background: #006400;
 }
+
+nav {
+    display: flex;
+    flex-flow: row;
+    flex: 1;
+    align-items: center;
+    /* 
+    Keeps the items centrally aligned on the vertical axis
+    */
+    justify-content: space-between;
+    /* 
+    Done to push the ul to the opposite side of the page without
+    having to use margin-left: auto;
+    which keeps the theme of using flex-box related properties
+    and values.
+    */
+    width: 100%;
+    height: 10vh;
+    padding: 0;
+    color: #fff;
+    border-bottom: 1px solid black;
+}
+
+ul {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    /* 
+    Evenly spacing out the list items
+    */
+    width: 33%;
+    list-style: none;
+}
+
+li {
+    flex-grow: 1;
+    font-size: 1.25rem;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+h1 {
+    font-size: 2.5rem;
+}
