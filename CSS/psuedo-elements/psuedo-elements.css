@@ -1,3 +1,36 @@
-body {
-    background: grey;
+h1 {
+    text-decoration: underline;
+}
+
+.before-after::before {
+    content: "before «";
+    text-decoration: underline;
+    color: gold;
+}
+.before-after::after {
+    content: "» and after";
+    text-decoration: underline;
+    color: gold;
+}
+
+.first-line::first-line {
+    font-weight: bolder;
+    /* 
+    NB: The ::first-line property can only work with all the font
+    color and background related properties.
+    It also has no effect on any first child inline-block elements
+    */
+}
+
+span {
+    display: inline-block;
+    /* 
+    NB: The ::first-letter psuedo-element only works when an element
+    has the behavior of a block level element, hence why the above
+    value of inline-block was added.
+    */
+}
+
+span::first-letter {
+    font-size: 2.25rem;
 }
