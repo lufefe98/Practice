@@ -96,20 +96,54 @@ label {
     font-size: 1.25rem;
     text-align: left;
 }
+input[title]:hover:after {
+    content: "attr(title)";
+    background: #001d00;
+    position: absolute;
+    color: #fff;
+}
 input, label, button {
     margin-top: 30px;
 }
 input[type="text"] {
-    width: 25%;
+    font-size: 1.2rem;
+    width: 24.5%;
     height: 30px;
     border-radius: 5px;
     border: 3px solid #006400;
 }
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    outline: none;
+    border: 3px solid #05f505;
+}
 input[type="email"], input[type="password"] {
+    font-size: 1.2rem;
     width: 50%;
     height: 30px;
     border-radius: 5px;
     border: 3px solid #006400;
+}
+button {
+    display: block;
+    /* 
+    Display of block was given so I could center the button
+    using auto of margin-left and right
+    */
+    height: 50px;
+    width: 10%;
+    clear: left;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    font-size: 1.25rem;
+    border-radius: 40px;
+    background: #001d00;
+    border: solid 3px #006400;
+}
+button:hover {
+    cursor: pointer;
+    background: #006400;
+    border: solid 3px #05f505;
 }
 
 .contain-toggle {
@@ -185,31 +219,26 @@ input[type="email"], input[type="password"] {
     input has been checked.
     */
   }
+
+  input:checked + .slider:after {
+      position: absolute;
+      /* 
+      Stops surrounding elements from affecting the pseudo elements
+      position by removing it from the flow of the document.
+      */
+    content: "Yes";
+    bottom: 5px;
+    left: 70px;
+  }
+  input + .slider:after {
+    position: absolute;
+    content: "No";
+    bottom: 5px;
+    left: 70px;
+  }
   .slider.round {
     border-radius: 34px;
   }
   .slider.round:before {
     border-radius: 34px;
   }
-
-button {
-    display: block;
-    /* 
-    Display of block was given so I could center the button
-    using auto of margin-left and right
-    */
-    height: 50px;
-    width: 10%;
-    clear: left;
-    margin-left: auto;
-    margin-right: auto;
-    color: #fff;
-    font-size: 1.25rem;
-    border-radius: 40px;
-    background: #001d00;
-    border: solid 3px #006400;
-}
-button:hover {
-    background: #006400;
-    border: solid 3px #05f505;
-}
