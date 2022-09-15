@@ -48,6 +48,7 @@ ul {
 li {
     flex-grow: 1;
     font-size: 1.25rem;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 a {
     color: inherit;
@@ -85,6 +86,9 @@ form {
     border-radius: 5px;
     box-sizing: border-box;
     box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.75);
+}
+form > * {
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 
@@ -139,6 +143,7 @@ button {
     border-radius: 40px;
     background: #001d00;
     border: solid 3px #006400;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 button:hover {
     cursor: pointer;
