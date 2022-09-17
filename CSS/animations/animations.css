@@ -1,3 +1,62 @@
 body {
     background: grey;
 }
+
+.rotate {
+    background: lime;
+    height: 300px;
+    width: 300px;
+    box-sizing: border-box;
+    border-radius: 100%;
+    border-top: 10px solid black;
+    border-bottom: 10px solid red;
+    text-align: center;
+}
+
+.rotate:hover {
+    animation-name: rotation;
+    /* 
+    Animation name takes a name that is set on the keyframe rule
+    and takes the css styles that are declared under the keyframe
+    rules and the specific points when the style is to be implemented.
+    */
+    animation-duration: 2s;
+}
+@keyframes rotation {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+    50% {
+        background: gold;
+    }
+  }
+  /* 
+  Keyframes allow for the controlling of intermediate steps in an
+  animation sequence by defining specific points and giving styles
+  that should be implemented at that point.
+  The keyframe is made use of with the animation name which is
+  next to the @keyframes rule.
+
+  Keyframe points are specified using percentages or from and to.
+  The percentages can be listed in any order, but they will still
+  operate in their numerical order.
+
+  Keyframes can be accessed by Javascript with the CSS object model
+  interface "CSSKeyFramesRule"
+
+  If a duplicate of keyframes for the same name occurs, the most recent 
+  keyframe will be used because keyframe rules don't cascade unless 
+  multiple (different) keyframes define the same percentage values.
+
+  If a keyframe (percentage point) is defined more than once, but not
+  all not all of the affected properties are in each keyframe, then
+  all the values will still be considered.
+
+  If a property is left out of some of the keyframe are interpolated
+  if possible, but if not, they will be dropped.
+
+  !important will be ignored.
+  */
