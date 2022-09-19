@@ -9,7 +9,7 @@ body {
     box-sizing: border-box;
     border-radius: 100%;
     border-top: 10px solid black;
-    border-bottom: 10px solid red;
+    border-bottom: 10px solid purple;
     text-align: center;
 }
 
@@ -20,17 +20,70 @@ body {
     and takes the css styles that are declared under the keyframe
     rules and the specific points when the style is to be implemented.
     */
-    animation-duration: 2s;
+    animation-duration: 10s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    /* 
+    Animation direction is default to normal, which starts the animation
+    from the elements default position.
+    The other values for animation direction include:
+    - Reverse: This starts the animation from the opposite of the
+      the default position of an element, before starting the animation
+    - Alternate and alternate-reverse: Alternate moved the animation
+      from its normal cycle and then reverses it. Alternate-reverse
+      does something similar, but it differs by starting the animation
+      from the opposite position.
+      */
+      animation-fill-mode: forwards;
+      /* 
+      Animation fill modes determine what happens to an animation
+      before and after the sequence has been executed.
+
+      The above example with the Forwards value retains the values from
+      the final keyframe.
+      - The final keyframe depends on the animation direction and
+        iteration count
+      The Backwards value applies the values from the first
+      keyframe, retains them during any delay period and then 
+      - The first keyframe depends on the animation direction
+      */
+      animation-timing-function: ease-out;
+      /* 
+      The animation timing function determines how an animation
+      will progress throughout the sequence.
+      
+      - Ease-out starts the animation quickly and then slows out as
+        the animation progresses towards the end
+
+      There are several other keyword values that are applicable to
+      the animation-timing-function property.
+
+      Besides the keyword values, there are several such as:
+      - Step-Function keywords
+        which go along the following format: steps(#, keyword)
+      - Cubic bezier function
+        which takes the following format: cubic-bezier(pn, p2, p3, p4)
+      All of the keyword values are based on the above functions, but
+      with their own individual values.
+
+      */
 }
 @keyframes rotation {
     0% {
       transform: rotate(0);
     }
-    100% {
-      transform: rotate(180deg);
+    25% {
+        background: red;
     }
     50% {
+        background: orangered;
+        transform: rotate(180deg);
+    }
+    75% {
         background: gold;
+    }
+    100% {
+      transform: rotate(0);
     }
   }
   /* 
@@ -47,16 +100,17 @@ body {
   Keyframes can be accessed by Javascript with the CSS object model
   interface "CSSKeyFramesRule"
 
-  If a duplicate of keyframes for the same name occurs, the most recent 
+  If a duplicate of keyframes for the same animation name occurs, the most recent 
   keyframe will be used because keyframe rules don't cascade unless 
   multiple (different) keyframes define the same percentage values.
 
-  If a keyframe (percentage point) is defined more than once, but not
+  If a keyframe (percentage point in the animation sequence) is defined more than once, but not
   all not all of the affected properties are in each keyframe, then
   all the values will still be considered.
+  (Side note: Cascading keyframes are supported from Firefox 14 an higher)
 
-  If a property is left out of some of the keyframe are interpolated
-  if possible, but if not, they will be dropped.
+  If a property is left out of some of the keyframe and can 
+  not be interpolated, they will be dropped.
 
   !important will be ignored.
   */
