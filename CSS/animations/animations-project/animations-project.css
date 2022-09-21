@@ -2,6 +2,7 @@ body {
     position: relative;
     margin: 0;
     background: #006400;
+    box-sizing: border-box;
 }
 
 /* NAVBAR */
@@ -9,14 +10,14 @@ body {
 nav {
     display: flex;
     flex-flow: row;
+    flex-wrap: wrap;
     flex: 1;
     align-items: center;
     justify-content: space-between;
     position: sticky;
     top: 0px;
     width: 100%;
-    height: 10vh;
-    padding-left: 20px;
+    height: auto;
     color: #fff;
     z-index: 10;
     background: #006400;
@@ -28,10 +29,9 @@ ul {
     display: flex;
     flex-flow: row;
     justify-content: space-around;
-    /* 
-    Evenly spacing out the list items
-    */
     width: 33%;
+    margin-top: 0;
+    margin-bottom: 0;
     font-weight: bold;
     list-style: none;
 }
@@ -52,7 +52,38 @@ a {
 }
 nav > h1 {
     font-size: 3.25rem;
+    margin-left: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
     font-family: 'Playfair Display', serif;
+}
+
+.chyron {
+    display: block;
+    width: 100%;
+    background: black;
+    opacity: 0.85;
+    font-size: 1rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.chyron > p {
+    animation-name: chyron-slide;
+    animation-duration: 12s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+}
+@keyframes chyron-slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 
