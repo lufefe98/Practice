@@ -248,7 +248,7 @@ button:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #666565;
     transition: .4s;
   }
   .slider:before {
