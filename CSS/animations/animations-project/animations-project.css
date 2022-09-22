@@ -69,6 +69,10 @@ li:nth-child(3):hover a:after {
     animation-fill-mode: forwards;
     left: 82.5%;
 }
+    /* 
+    Gave the animations a fill mode of forwards so that once the
+    animation has concluded, the animation stays that way
+    */
 
 @keyframes li-hover1 {
     0% {
@@ -136,6 +140,14 @@ nav > h1 {
     animation-play-state: running;
     animation-fill-mode: forwards;
 }
+
+/* 
+    The animation has been given a linear timing function so the
+    paragraph in the chyron moves at a consistent pace
+    The play state is given a value of running so it continues
+    to run along the chyron.
+*/
+
 @keyframes chyron-slide {
     0% {
         transform: translateX(0);
