@@ -46,21 +46,55 @@ li:nth-child(-n+3):hover a:after {
     bottom: 15px;
     content: "";
     height: 2px;
-    /* width: 100px; */
     background: #fff;
 }
 li:nth-child(1):hover a:after {
-    width: 100px;
-    right: 25.75%;
+    animation-name: li-hover1;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    left: 67%;
 }
 li:nth-child(2):hover a:after {
-    right: 19%;
-    width: 75px;
+    animation-name: li-hover2;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    left: 75.6%;
 }
 li:nth-child(3):hover a:after {
-    right: 11%;
-    width: 90px;
+    animation-name: li-hover3;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    left: 82.5%;
 }
+
+@keyframes li-hover1 {
+    0% {
+        width: 10px;
+    }
+    100% {
+        width: 87px;
+    }
+}
+@keyframes li-hover2 {
+    0% {
+        width: 10px;
+    }
+    100% {
+        width: 67px;
+    }
+}
+@keyframes li-hover3 {
+    0% {
+        width: 10px;
+    }    
+    100% {
+        width: 80px;
+    }
+}
+
 a {
     color: inherit;
     text-decoration: none;
