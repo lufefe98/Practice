@@ -1,0 +1,303 @@
+body {
+    position: relative;
+    margin: 0;
+    background: #006400;
+    box-sizing: border-box;
+}
+
+/* NAVBAR */
+
+nav {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    height: auto;
+    color: #fff;
+    z-index: 10;
+    background: #006400;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px 0 rgb(44, 44, 44);
+}
+
+ul {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    width: 33%;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+    list-style: none;
+}
+
+li {
+    flex-grow: 1;
+    font-size: 1.25rem;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+li:nth-child(-n+3):hover a:after {
+    position: absolute;
+    bottom: 15px;
+    content: "";
+    height: 2px;
+    background: #fff;
+}
+li:nth-child(1):hover a:after {
+    animation-name: li-hover1;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    left: 67%;
+}
+li:nth-child(2):hover a:after {
+    animation-name: li-hover2;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    left: 75.6%;
+}
+li:nth-child(3):hover a:after {
+    animation-name: li-hover3;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    left: 82.5%;
+}
+    /* 
+    Gave the animations a fill mode of forwards so that once the
+    animation has concluded, the animation stays that way
+    */
+
+@keyframes li-hover1 {
+    0% {
+        width: 10px;
+    }
+    100% {
+        width: 87px;
+    }
+}
+@keyframes li-hover2 {
+    0% {
+        width: 10px;
+    }
+    100% {
+        width: 67px;
+    }
+}
+@keyframes li-hover3 {
+    0% {
+        width: 10px;
+    }    
+    100% {
+        width: 80px;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.user {
+    padding: 5px;
+    border: solid 2px #fff;
+    border-radius: 5rem;
+}
+nav > h1 {
+    font-size: 3.25rem;
+    margin-left: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+
+/* Main Content */
+
+.chyron {
+    display: block;
+    width: 100%;
+    background: black;
+    opacity: 0.85;
+    font-size: 1rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.chyron > p {
+    color: #fff;
+    font-size: 1.2rem;
+    animation-name: chyron-slide;
+    animation-duration: 12s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+}
+
+/* 
+    The animation has been given a linear timing function so the
+    paragraph in the chyron moves at a consistent pace
+    The play state is given a value of running so it continues
+    to run along the chyron.
+*/
+
+@keyframes chyron-slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.main-h1 {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+form {
+    position: relative;
+    height: auto;
+    width: 90vw;
+    padding: 15px;
+    margin: 2.5% auto 5%;
+    background: black;
+    opacity: 0.85;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.75);
+}
+form > * {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+label {
+    color: #fff;
+    float: left;
+    clear: left;
+    width: 250px;
+    font-size: 1.25rem;
+    text-align: left;
+}
+input[title]:hover:after {
+    content: "attr(title)";
+    background: #001d00;
+    position: absolute;
+    color: #fff;
+}
+input, label, button {
+    margin-top: 30px;
+}
+input[type="text"] {
+    font-size: 1.2rem;
+    width: 24.5%;
+    height: 30px;
+    border-radius: 5px;
+    border: 3px solid #006400;
+}
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    outline: none;
+    border: 3px solid #05f505;
+}
+input[type="email"], input[type="password"] {
+    font-size: 1.2rem;
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    border: 3px solid #006400;
+}
+button {
+    display: block;
+    height: 50px;
+    width: 10%;
+    clear: left;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    font-size: 1.25rem;
+    border-radius: 40px;
+    background: #001d00;
+    border: solid 3px #006400;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+button:hover {
+    cursor: pointer;
+    background: #006400;
+    border: solid 3px #05f505;
+}
+
+.contain-toggle {
+    display: flex;
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline;
+    width: 60px;
+    height: 30px;
+  }
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #666565;
+    transition: .4s;
+  }
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+  }
+  input:checked + .slider {
+    background-color: #05f505;
+  }
+  input:focus + .slider {
+    box-shadow: 0 0 1px #05f505;
+  }
+  input:checked + .slider:before {
+    transform: translateX(30px);
+  }
+
+  input:checked + .slider:after {
+      position: absolute;
+    content: "Yes";
+    bottom: 5px;
+    left: 70px;
+  }
+  input + .slider:after {
+    position: absolute;
+    content: "No";
+    bottom: 5px;
+    left: 70px;
+  }
+  .slider.round {
+    border-radius: 34px;
+  }
+  .slider.round:before {
+    border-radius: 34px;
+  }
