@@ -1,0 +1,252 @@
+body {
+    margin: 0;
+    background: #fff;
+}
+
+
+
+
+
+/* Tetxs */
+.main-h1 {
+    color: #fff;
+    font-size: 5rem;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+
+
+/* Navbar */
+#check {
+    display: none;
+}
+label #btn, label #cancel {
+    position: absolute;
+    cursor: pointer;
+    background: #fdfdfd;
+    border-radius: 3px;
+}
+label #btn {
+    width: 25px;
+    height: 25px;
+    right: 20px;
+    top: 5px;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 50px;
+    padding: 6px 12px;
+    color: black;
+    transition: all .5s;
+}
+label #cancel {
+    display: none;
+    z-index: 1111;
+    height: 25px;
+    width: 20px;
+    position: fixed;
+    right: -22%;
+    padding: 4px 9px;
+    border-radius: 60px;
+    font-size: 25px;
+    text-align: center;
+    background: #fff;
+    color: black;
+    transition: all .8s ease;
+}
+#check:checked ~ .sidebar {
+    right: 0;
+}
+#check:checked ~ label #btn {
+    right: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+#check:checked ~ label #cancel {
+    display: block;
+    right: 0.5%;
+}
+nav {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10%;
+    font-size: 1.75rem;
+    z-index: 1000;
+}
+#head-h1 {
+    position: relative;
+    z-index: 10;
+    float: left;
+    width: 100%;
+    margin-top: 2%;
+    margin-left: 10%;
+    text-align: center;
+    opacity: 1;
+    color: #fff;
+    font-family: 'Allura', cursive;
+}
+
+
+
+
+
+/* Header */
+#gallery-head {
+    background: url("https://images.unsplash.com/photo-1578985824626-945a6f546304?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5%;
+    width: 100%;
+    height: 50vh;
+}
+
+.header-intro {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 20%;
+    height: 20%;
+    color: white;
+}
+
+hr.hr-5 {
+    display: block;
+    border: 5px;
+    border-top: 3px double #fff;
+}
+
+
+
+
+
+/* Image Layout */
+.container {
+    display: grid;
+    grid-template-areas:
+        "left right"
+        "wide wide";
+    /* 
+    The aim for the container is to have 2 vertical rectangles above
+    one horizontal rectangle, hence the template that is used above.
+    */
+    grid-template-columns: 1fr 1fr;
+    /* 
+    The columns must be equal in their width.
+    */
+    gap: 10px;
+    margin: 5px auto 5%;
+    max-width: 90%;
+    box-sizing: border-box;
+}
+.collection1 {
+    grid-area: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "top-left top-right"
+    "across across";
+    /* 
+    Grid template areas were used because they were the most
+    feasible solution for getting to the a layout of 2 square
+    images at the top of the container and one vertical rectangle
+    at the bottom.
+    */
+    gap: 2px;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.25);
+}
+.collection2 {
+    grid-area: right;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "across across"
+    "bottom-left bottom-right";
+    /* 
+    The aim with this layout is the same as .collection1, but it
+    is just turned upside down.
+    */
+    gap: 2px;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.25);
+}
+.collection3 {
+    grid-area: wide;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.25);
+}
+img {
+    width: 100%;
+    height: 100%;
+}
+/* 
+The images should fit in the grid that they are placed within.
+Giving them a height and width achieves that, without having to
+deal with any overflow.
+*/
+.top-left {
+    grid-area: top-left;
+}
+.top-right {
+    grid-area: top-right;
+}
+.bottom-left {
+    grid-area: bottom-left;
+}
+.bottom-right {
+    grid-area: bottom-right;
+}
+.across {
+    grid-area: across;
+}
+
+
+
+
+
+
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 0px;
+    padding-top: 2.5%;
+    background: #222;
+}
+.footer-brand {
+    display: inline-block;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Allura', cursive;
+}
+.footer-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 33%;
+    margin: auto;
+    margin-bottom: 5%;
+}

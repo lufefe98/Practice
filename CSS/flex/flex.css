@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+}
+
+header {
+    background: purple;
+    height: 100px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    line-height: 100px;
+    margin: 0;
+}
+
+article {
+    flex: 1 200px;
+    /* 
+    The above declaration is a unitless proportion that
+    dictates the amount of available space on the main axis for
+    the flex item it is declared on relativeto the other flex
+    items.
+    
+    In the above case, all article elements in a flex container
+    will take up the same amount of space (ie: 1) after properties
+    like padding and margin have been set.
+
+
+    NB: The value for flex is proportianally set, therefore
+    regardless of the value entered, the end result is the same
+    for all the articles it is set on, unless you specifically
+    target one or more items to take up more space as seen in the 
+    below CSS rule
+    It is also possible to set a minimum size by adding a size
+    in addition to the flex value. In the above case, the flex
+    item will have a minimum value of 200px and thereafter, share
+    the available space in proportion with the other flex items.
+
+
+
+    Flex is shorthand for:
+    1. Flex-grow - The unitless proportion value which dictates
+        the amount of available space on the main axis relative
+        to the other items.
+    2. Flex-shrink - Another unitless proportion which dictates how
+        much a flex item will shrink whenever they overflow the
+        container
+    3. Flex-basis - The minimum value for flex items that was
+        previously mentioned.
+
+    *It is probablt best to use the longhand if it is needed to override something*
+    */
+    padding: 10px;
+    margin: 10px;
+    background: aqua;
+}
+article:nth-of-type(3) {
+    flex: 2 200px;
+    /* 
+    The above declaration, which targets a specific element in
+    a flex container, makes it take up twice the amount of space
+    on the main axis (x-axis)
+    */
+}
+
+section {
+    display: flex;
+    /* 
+    This creates a makes section a flex-container and as a result the 
+    children element become equally sized flex columns.
+
+    Important notes"
+    1. Flex should only be set to parent elements with elements
+    that you wish to implement the flexbox layout on.
+
+    2. When display is set to flex, the parent element behaves as
+    a block level element and the child elements behave as 
+    flex-items, but if the desired behaviour of the child elements
+    is for them to act as inline elements, then a display of
+    inline-flex can be used, which still retains the flex layout.
+
+    3. The default layout is row (ie: The flex items are layed
+    out horizontally)
+    */
+    flex-direction: row;
+    /* 
+    The above declaration of flex-direction decides the direction
+    of theflex items
+    where row lays them out horizontally (left to right) and column
+    lays them out vertically (from top to bottom)
+
+    It is possible to reverse the direction in which the flex items
+    start and end by using the -reverse after row or column.
+    */
+}

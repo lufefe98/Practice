@@ -1,0 +1,149 @@
+body {
+    background: rgb(194, 193, 193);
+}
+
+.container-1 {
+    background: black;
+    display: grid;
+    /* The above does not change anything yet, the grid items still
+    display as one grid item stacked on top of another grid item
+     */
+    grid-template-columns: 200px 200px 200px;
+    /* The above is where things change and is where you start to
+    dictate how things are layed out using grid.
+   In the above example, the layout has been changed to have 3
+   vertical columns of 200px in width. 
+    */
+}
+.container-2 {
+    background: black;
+    margin-bottom: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* The 1fr unit allows grid items to take up 1 fraction
+    of the available space, so unlike in the first container where
+    the grid items took up 200px of the space in the container and 
+    then leave the rest of the space going across the container, the
+    grid items which use the 1fr unit take up as much of the remaining
+    space as possible and fill up the container according to the
+    direction which it is set to go in. */
+}
+.container-3 {
+    background: black;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    /* Depending on how many units of the available space you set
+    the grid item to take, it will expand accordingly and take up
+    the specified amount of space. In this case, where there are
+    3 grid template columns, where the first grid item is set to 2fr, the
+    amount of space it will take up is 2 thirds of the space and the
+    other 2 will take up the remaining third. */
+}
+.container-4 {
+    background: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    /* You can not use fr units to make gaps
+    Also, gap is short-hand for creating gaps between the rows and
+    columns of a grid.
+    A grid column-gap will create vertical gaps and row-gap creates
+    horizontal gaps.
+    The short-hand of gap is also useful for other types of layouts.
+    */
+}
+.container-5 {
+    background: black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 
+    The first value determines how many tracks you want and the 2nd
+    value is for the size of each track (It is possible to set more than
+    one value when determining the size of each grid item).
+    NB: How many values you enter after the first value will determine
+    how many grid items you have per listing and how much space they
+    will take up.
+    */
+    gap: 10px;
+}
+.container-6 {
+    background: black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 100px;
+    /* 
+    When you use the grid-template you are setting the explicit grid 
+    and determining whatever you set after it (be it coumns or rows), but
+    what is being used to hold the content is going to be in the 
+    implicit grid which is created using grid-auto-column/row and this
+    will set whatever is outside of the explicit grid (In this case, it would
+    be in the rows).
+    */
+    gap: 10px;
+}
+.container-7 {
+    background: black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    /* 
+    The above helps to set a minimum and maximum size for the content
+    just in case it happens to become too large to fit within the
+    space that is set by a single value.
+    */
+    gap: 10px;
+}
+.container-8 {
+    background: black;
+    display: grid;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* 
+    To make use of the "As many columns as will fit", we make use
+    of the repeat() function, but instead of using a number for the
+    first parameter, we pass in the keyword auto-fill, and then for 
+    the 2nd parameter, we make use of the minmax function where
+    we enter the minimum and maximum values.
+    The auto-fill is what makes the grid layout allow
+    "as many as will fit".
+    */
+    gap: 10px;
+}
+
+.container-1 > div {
+    border-radius: 5px;
+    padding: 10px;
+}
+.container-2 > div {
+    border-radius: 5px;
+    padding: 10px;
+}
+.container-3 > div {
+    border-radius: 5px;
+    padding: 10px;
+}
+.container-4 > div {
+    border-radius: 5px;
+    padding: 10px;
+}
+.container-5 > div {
+    border-radius: 5px;
+    padding: 10px;
+}
+.container-6 > div {
+    border-radius: 5px;
+    padding: 10px;
+}
+.container-7 > div {
+    border-radius: 5px;
+    padding: 10px;
+}
+.container-8 > div {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+div {
+    background: yellow;
+    border: solid 1px grey;
+}
