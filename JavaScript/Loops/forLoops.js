@@ -1,5 +1,5 @@
 // Loops are used for the repeating of a specific action as long as a specific condition is
-// not met
+// still true
 
 // For Loops
 for (let i = 0; i <= 15; i++) {
@@ -8,7 +8,7 @@ for (let i = 0; i <= 15; i++) {
 
 // How a for loop works is that it will accept an initial expression (in the example above is a
 // varaible), followed by a condition related to that initial expression and thereafter, an
-// update (increment/decrement) expression that until the condition evaluates to being true.
+// update (increment/decrement) expression that until the condition evaluates to being false.
 // (Side note: If the condition is not included, then it is assumed to be true)
 
 // Then inside the curly braces is a statement that will be executed.
