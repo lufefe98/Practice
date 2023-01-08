@@ -1,12 +1,12 @@
 // While loops are a basic way of looping
 
-// let num = 10
-// let i = 0
+let num = 10
+let i = 0
 
-// while (i < num) {
-//     i++
-//     console.log(i)
-// }
+while (i < num) {
+    i++
+    console.log(i)
+}
 
 // While loops use a condition based on a variable and then use as long as the condition 
 // is still true, the loop will continue to run
