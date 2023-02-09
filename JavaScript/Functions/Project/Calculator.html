@@ -1,55 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="Calculator.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+
     <title>iPhone Calculator</title>
 </head>
+
 <body>
     <h1>iPhone Calculator</h1>
 
     <div class="container">
-        <div class="display">0</div>
+        <div class="display" data-display>0</div>
 
 
 
-        <div class="buttons">
-            <button class="calc-btns top-btns">AC</button>
-            <button class="calc-btns top-btns">+/-</button>
-            <button class="calc-btns top-btns">%</button>
-            <button class="calc-btns right-btns">÷</button>
+        <div class="buttons-container">
+            <button class="func-btns" data-func-clear>AC</button>
+            <button class="func-btns" data-func-plus-min>+/-</button>
+            <button class="func-btns" data-func-percent>%</button>
+            <button class="right-btns" data-operation-divide>÷</button>
 
 
-            <button class="calc-btns" value="7">7</button>
-            <button class="calc-btns" value="8">8</button>
-            <button class="calc-btns" value="9">9</button>
-            <button class="calc-btns right-btns">x</button>
-
-
-
-            <button class="calc-btns" value="4">4</button>
-            <button class="calc-btns" value="5">5</button>
-            <button class="calc-btns" value="6">6</button>
-            <button class="calc-btns right-btns">-</button>
+            <button data-number-7>7</button>
+            <button data-number-8>8</button>
+            <button data-number-9>9</button>
+            <button class="right-btns" id="multiply" data-operation-multiply>x</button>
 
 
 
-            <button class="calc-btns" value="1">1</button>
-            <button class="calc-btns" value="2">2</button>
-            <button class="calc-btns" value="3">3</button>
-            <button class="calc-btns right-btns">+</button>
+            <button data-number-4>4</button>
+            <button data-number-5>5</button>
+            <button data-number-6>6</button>
+            <button class="right-btns" id="subtract" data-operation-subtract>−</button>
 
 
-            <button class="calc-btns zero" value="0">0</button>
-            <button class="calc-btns" value=".">,</button>
-            <button class="calc-btns right-btns">=</button>
+
+            <button data-number-1>1</button>
+            <button data-number-2>2</button>
+            <button data-number-3>3</button>
+            <button class="right-btns" data-operation-addition>+</button>
+
+
+            <button class="zero" data-number-0>0</button>
+            <button data-number-period>,</button>
+            <button id="equal" data-operation-equals>=</button>
         </div>
+
+        <div class="home-bar"></div>
     </div>
-    
+
 
     <script src="Calculator.js"></script>
 </body>
+
 </html>
