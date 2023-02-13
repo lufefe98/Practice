@@ -377,3 +377,77 @@ percent.addEventListener('click', function () {
 // the .toString method.
 
 // The operator and the string that is stored in memory is set to null.
+
+
+
+
+
+// KEYBOARD EVENTS
+
+// For Numbers
+window.addEventListener("keydown", function(evt) {
+    if (evt.code === "NumpadDecimal" || evt.code === "Period") {
+        currDisplayStr = getDisplayStrValue()
+        if (!currDisplayStr.includes('.')) {
+            setDisplayStrAsValue(currDisplayStr + '.')
+        }
+    } else if (evt.code === "Numpad0" || evt.code === "Digit0") {
+        handleClick(zero.textContent)
+    } else if (evt.code === "Numpad1" || evt.code === "Digit1") {
+        handleClick(one.textContent)
+    } else if (evt.code === "Numpad2" || evt.code === "Digit2") {
+        handleClick(two.textContent)
+    } else if (evt.code === "Numpad3" || evt.code === "Digit3") {
+        handleClick(three.textContent)
+    } else if (evt.code === "Numpad4" || evt.code === "Digit4") {
+        handleClick(four.textContent)
+    } else if (evt.code === "Numpad5" || evt.code === "Digit5") {
+        handleClick(five.textContent)
+    } else if (evt.code === "Numpad6" || evt.code === "Digit6") {
+        handleClick(six.textContent)
+    } else if (evt.code === "Numpad7" || evt.code === "Digit7") {
+        handleClick(seven.textContent)
+    } else if (evt.code === "Numpad8" || evt.code === "Digit8") {
+        handleClick(eight.textContent)
+    } else if (evt.code === "Numpad9" || evt.code === "Digit9") {
+        handleClick(nine.textContent)
+    }
+})
+// The above event listeners use the evt object from the window object in order
+// to listen for any events that occur on the keyboard, and in this case, the
+// events that are being listened for are for numbers.
+
+// Thereafter, the if...else statements check for which buttons are being
+// pressed and if the condition is true, then the handlClick() function expression
+// will add the corresponding number for the button to the text content of
+// the display.
+
+// In the case of the decimal, the code for the button click was duplicated
+// in its if statement.
+
+
+
+
+
+// For Operators
+window.addEventListener("keydown", function(evt) {
+    if (evt.code === "NumpadAdd") {
+        handleOperators('addition')
+    } else if (evt.code === "NumpadSubtract" || evt.code === "Minus") {
+        handleOperators('subtraction')
+    } else if (evt.code === "NumpadDivide" || evt.code === "Slash") {
+        handleOperators('division')
+    } else if (evt.code === "NumpadMultiply") {
+        handleOperators('multiplication')
+    }if (evt.code === "NumpadEnter" || evt.code === "Enter" || evt.code === "Equal") {
+        if (valueStrInMemory) {
+            setDisplayStrAsValue(getResultAsStr())
+            valueStrInMemory = null
+            operatorInMemory = null
+        }
+    } 
+})
+
+// The event listeners for the operators on the keyboard take the handleOperators
+// function expression and use it in the same way as their corresponding button click
+// event listeners.
