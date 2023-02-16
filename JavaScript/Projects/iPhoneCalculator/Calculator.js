@@ -135,6 +135,24 @@ const setDisplayStrAsValue = function (displayStrValue) {
         return;
     }
 
+    if (displayStrValue.length > 6) {
+        display.style.fontSize = '4rem'
+    } 
+    if (displayStrValue.length >= 7) {
+        display.style.fontSize = '3.5rem'
+    } 
+    if (displayStrValue.length >= 8) {
+        display.style.fontSize = '3rem'
+    }
+    if (displayStrValue.length <= 6) {
+        display.style.fontSize = '4.5rem'
+    }
+    // Tha above will adjust the font size of the numbers that are entered
+    // on the display of the calculator by reducing the font size by 0.5rem
+    // from the 6th digit onwards, but otherwise if the number of digits on the
+    // display is equal to or less than 6 digits, then the font size will be the
+    // same as wehat wsa computed on the CSS file.
+
     const [wholeNumStr, decimalNumStr] = displayStrValue.split('.')
 
     if (decimalNumStr) {
@@ -239,10 +257,15 @@ const handleOperators = function (operantion) {
 // For Numbers and Decimal
 for (let i = 0; i < allNumbers.length; i++) {
     const nthNum = allNumbers[i]
+    const currDisplayStr = getDisplayStrValue()
 
     nthNum.addEventListener('click', function () {
         handleClick(i.toString())
         clear.textContent = 'C'
+
+        if (currDisplayStr.length === 6) [
+            display.style.fontSize = '3rem'
+        ]
     })
 }
 // The for...loop is used to select all the number buttons and loop through all of
@@ -435,6 +458,7 @@ window.addEventListener("keydown", function (evt) {
     } else if (evt.code === "Numpad9" || evt.code === "Digit9") {
         handleClick(nine.textContent)
     }
+    clear.textContent = 'C'
 })
 // The above event listeners use the evt object from the window object in order
 // to listen for any events that occur on the keyboard, and in this case, the
@@ -468,6 +492,7 @@ window.addEventListener("keydown", function (evt) {
             valueStrInMemory = null
             operatorInMemory = null
         }
+        clear.textContent = 'AC'
     }
 })
 
