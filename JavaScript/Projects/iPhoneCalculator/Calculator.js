@@ -435,6 +435,7 @@ window.addEventListener("keydown", function (evt) {
     } else if (evt.code === "Numpad9" || evt.code === "Digit9") {
         handleClick(nine.textContent)
     }
+    clear.textContent = 'C'
 })
 // The above event listeners use the evt object from the window object in order
 // to listen for any events that occur on the keyboard, and in this case, the
@@ -468,6 +469,7 @@ window.addEventListener("keydown", function (evt) {
             valueStrInMemory = null
             operatorInMemory = null
         }
+        clear.textContent = 'AC'
     }
 })
 
