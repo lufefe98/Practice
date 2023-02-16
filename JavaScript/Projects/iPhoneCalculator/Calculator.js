@@ -227,6 +227,13 @@ const handleOperators = function (operantion) {
 
 
 
+// For Display
+
+
+
+
+
+
 // EVENT LISTENERS
 
 // For Numbers and Decimal
@@ -235,6 +242,7 @@ for (let i = 0; i < allNumbers.length; i++) {
 
     nthNum.addEventListener('click', function () {
         handleClick(i.toString())
+        clear.textContent = 'C'
     })
 }
 // The for...loop is used to select all the number buttons and loop through all of
@@ -249,6 +257,9 @@ for (let i = 0; i < allNumbers.length; i++) {
 // The event handler will run the handleClick() function with the stringified version of the "i"
 // variable as an argument.
 
+// The text content of the 'clear' function's button is set to 'C' to match what happens on the
+// iPhone when a user adds a new input.
+
 
 
 
@@ -258,10 +269,14 @@ period.addEventListener('click', function () {
     if (!currDisplayStr.includes('.')) {
         setDisplayStrAsValue(currDisplayStr + '.')
     }
+    clear.textContent = 'C'
 })
 // For the decomial, whenever it is clicked, if the display string does NOT include a period "."
 // then the display string should add a period to whatever is on the current display
 // This was done so that the period does not replace the defalut display of "0"
+
+// The text content of the 'clear' function's button is set to 'C' to match what happens on the
+// iPhone when a user adds a new input (ie: a number or a decimal point).
 
 
 
@@ -293,6 +308,7 @@ equals.addEventListener('click', function () {
         valueStrInMemory = null
         operatorInMemory = null
     }
+    clear.textContent = 'AC'
 })
 // The equals sign is a special case from the other operators and therefore has its own special logic, separate
 // from the other mathematical operations.
@@ -300,6 +316,9 @@ equals.addEventListener('click', function () {
 // that is to be displayed to whatever result the getResultAsStr() function expression produces.
 // Once the entire mathematical operation has been performed, then the value and the operator that is stored in
 // memory is reset to null.
+
+// The text content of the 'clear' function's button is set back to 'AC' to match what happens on the
+// iPhone when a mathematical operation has been completed.
 
 
 
@@ -312,9 +331,13 @@ clear.addEventListener('click', function () {
     setDisplayStrAsValue('0')
     valueStrInMemory = null
     operatorInMemory = null
+    clear.textContent = 'AC'
 })
 // The clearing function of the calculator, if clicked, should reset the display to 0
 // and set the operator and the string that is stored in memory to null.
+
+// The text content of the 'clear' function's button is set back to 'AC' to match what happens on the
+// iPhone when the 'clear' button has been clicked.
 
 
 
@@ -385,7 +408,7 @@ percent.addEventListener('click', function () {
 // KEYBOARD EVENTS
 
 // For Numbers
-window.addEventListener("keydown", function(evt) {
+window.addEventListener("keydown", function (evt) {
     if (evt.code === "NumpadDecimal" || evt.code === "Period") {
         currDisplayStr = getDisplayStrValue()
         if (!currDisplayStr.includes('.')) {
@@ -430,7 +453,7 @@ window.addEventListener("keydown", function(evt) {
 
 
 // For Operators
-window.addEventListener("keydown", function(evt) {
+window.addEventListener("keydown", function (evt) {
     if (evt.code === "NumpadAdd") {
         handleOperators('addition')
     } else if (evt.code === "NumpadSubtract" || evt.code === "Minus") {
@@ -439,13 +462,13 @@ window.addEventListener("keydown", function(evt) {
         handleOperators('division')
     } else if (evt.code === "NumpadMultiply") {
         handleOperators('multiplication')
-    }if (evt.code === "NumpadEnter" || evt.code === "Enter" || evt.code === "Equal") {
+    } if (evt.code === "NumpadEnter" || evt.code === "Enter" || evt.code === "Equal") {
         if (valueStrInMemory) {
             setDisplayStrAsValue(getResultAsStr())
             valueStrInMemory = null
             operatorInMemory = null
         }
-    } 
+    }
 })
 
 // The event listeners for the operators on the keyboard take the handleOperators
