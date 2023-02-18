@@ -147,11 +147,11 @@ const setDisplayStrAsValue = function (displayStrValue) {
     if (displayStrValue.length <= 6) {
         display.style.fontSize = '4.5rem'
     }
-    // Tha above will adjust the font size of the numbers that are entered
+    // The above will adjust the font size of the numbers that are entered
     // on the display of the calculator by reducing the font size by 0.5rem
     // from the 6th digit onwards, but otherwise if the number of digits on the
     // display is equal to or less than 6 digits, then the font size will be the
-    // same as wehat wsa computed on the CSS file.
+    // same as what was computed on the CSS file.
 
     const [wholeNumStr, decimalNumStr] = displayStrValue.split('.')
 
@@ -162,6 +162,10 @@ const setDisplayStrAsValue = function (displayStrValue) {
     }
     // toLocaleString() will add a comma whenever a number gets into the thousands (ie: a number 
     // will not have more than three digits per comma).
+
+    if (displayStrValue.length >= 10) {
+        display.textContent = parseFloat(displayStrValue.substring(0, 9)).toLocaleString()
+    }
 }
 
 // The above function is what will be used to set the values in the display of the calculator.
@@ -257,16 +261,11 @@ const handleOperators = function (operantion) {
 // For Numbers and Decimal
 for (let i = 0; i < allNumbers.length; i++) {
     const nthNum = allNumbers[i]
-    const currDisplayStr = getDisplayStrValue()
 
     nthNum.addEventListener('click', function () {
         handleClick(i.toString())
         clear.textContent = 'C'
-
-        if (currDisplayStr.length === 6) [
-            display.style.fontSize = '3rem'
-        ]
-    })
+    })  
 }
 // The for...loop is used to select all the number buttons and loop through all of
 // them so as to prevent having to duplicate event handlers for when the buttons are
