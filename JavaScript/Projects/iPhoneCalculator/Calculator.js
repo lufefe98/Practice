@@ -166,6 +166,9 @@ const setDisplayStrAsValue = function (displayStrValue) {
     if (displayStrValue.length >= 10) {
         display.textContent = parseFloat(displayStrValue.substring(0, 9)).toLocaleString()
     }
+    // If the length of the number that is on the display of the calculator exceeds 10 digits/characters
+    // then the textContent of the display should extract the characters from index 0 up to index 9
+    // (ie: The first character up to the 9th character) with the use of the the substring() method.
 }
 
 // The above function is what will be used to set the values in the display of the calculator.

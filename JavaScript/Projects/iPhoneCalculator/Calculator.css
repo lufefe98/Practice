@@ -76,7 +76,8 @@ button:active {
 }
 
 .right-btns:focus {
-    filter: brightness(120%);
+    color: #FF9500;
+    background: white;
 }
 .buttons-container .zero {
     grid-column: span 2;
