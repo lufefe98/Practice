@@ -137,10 +137,10 @@ const setDisplayStrAsValue = function (displayStrValue) {
 
     if (displayStrValue.length > 6) {
         display.style.fontSize = '4rem'
-    } 
+    }
     if (displayStrValue.length >= 7) {
         display.style.fontSize = '3.5rem'
-    } 
+    }
     if (displayStrValue.length >= 8) {
         display.style.fontSize = '3rem'
     }
@@ -268,7 +268,7 @@ for (let i = 0; i < allNumbers.length; i++) {
     nthNum.addEventListener('click', function () {
         handleClick(i.toString())
         clear.textContent = 'C'
-    })  
+    })
 }
 // The for...loop is used to select all the number buttons and loop through all of
 // them so as to prevent having to duplicate event handlers for when the buttons are
@@ -434,31 +434,55 @@ percent.addEventListener('click', function () {
 
 // For Numbers
 window.addEventListener("keydown", function (evt) {
-    if (evt.code === "NumpadDecimal" || evt.code === "Period") {
-        currDisplayStr = getDisplayStrValue()
-        if (!currDisplayStr.includes('.')) {
-            setDisplayStrAsValue(currDisplayStr + '.')
-        }
-    } else if (evt.code === "Numpad0" || evt.code === "Digit0") {
-        handleClick(zero.textContent)
-    } else if (evt.code === "Numpad1" || evt.code === "Digit1") {
-        handleClick(one.textContent)
-    } else if (evt.code === "Numpad2" || evt.code === "Digit2") {
-        handleClick(two.textContent)
-    } else if (evt.code === "Numpad3" || evt.code === "Digit3") {
-        handleClick(three.textContent)
-    } else if (evt.code === "Numpad4" || evt.code === "Digit4") {
-        handleClick(four.textContent)
-    } else if (evt.code === "Numpad5" || evt.code === "Digit5") {
-        handleClick(five.textContent)
-    } else if (evt.code === "Numpad6" || evt.code === "Digit6") {
-        handleClick(six.textContent)
-    } else if (evt.code === "Numpad7" || evt.code === "Digit7") {
-        handleClick(seven.textContent)
-    } else if (evt.code === "Numpad8" || evt.code === "Digit8") {
-        handleClick(eight.textContent)
-    } else if (evt.code === "Numpad9" || evt.code === "Digit9") {
-        handleClick(nine.textContent)
+    const event = evt
+    switch (event.code) {
+        case "NumpadDecimal":
+        case "Period":
+            currDisplayStr = getDisplayStrValue()
+            if (!currDisplayStr.includes('.')) {
+                setDisplayStrAsValue(currDisplayStr + '.')
+            }
+            break;
+        case 'Numpad0':
+        case 'Digit0':
+            handleClick(zero.textContent)
+            break;
+        case 'Numpad1':
+        case 'Digit1':
+            handleClick(one.textContent)
+            break;
+        case 'Numpad2':
+        case 'Digit2':
+            handleClick(two.textContent)
+            break;
+        case 'Numpad3':
+        case 'Digit3':
+            handleClick(three.textContent)
+            break;
+        case 'Numpad4':
+        case 'Digit4':
+            handleClick(four.textContent)
+            break;
+        case 'Numpad5':
+        case 'Digit5':
+            handleClick(five.textContent)
+            break;
+        case 'Numpad6':
+        case 'Digit6':
+            handleClick(six.textContent)
+            break;
+        case 'Numpad7':
+        case 'Digit7':
+            handleClick(seven.textContent)
+            break;
+        case 'Numpad8':
+        case 'Digit8':
+            handleClick(eight.textContent)
+            break;
+        case 'Numpad9':
+        case 'Digit9':
+            handleClick(nine.textContent)
+            break;
     }
     clear.textContent = 'C'
 })
@@ -466,7 +490,7 @@ window.addEventListener("keydown", function (evt) {
 // to listen for any events that occur on the keyboard, and in this case, the
 // events that are being listened for are for numbers.
 
-// Thereafter, the if...else statements check for which buttons are being
+// Thereafter, the switch statements check for which buttons are being
 // pressed and if the condition is true, then the handlClick() function expression
 // will add the corresponding number for the button to the text content of
 // the display.
@@ -480,21 +504,33 @@ window.addEventListener("keydown", function (evt) {
 
 // For Operators
 window.addEventListener("keydown", function (evt) {
-    if (evt.code === "NumpadAdd") {
-        handleOperators('addition')
-    } else if (evt.code === "NumpadSubtract" || evt.code === "Minus") {
-        handleOperators('subtraction')
-    } else if (evt.code === "NumpadDivide" || evt.code === "Slash") {
-        handleOperators('division')
-    } else if (evt.code === "NumpadMultiply") {
-        handleOperators('multiplication')
-    } if (evt.code === "NumpadEnter" || evt.code === "Enter" || evt.code === "Equal") {
-        if (valueStrInMemory) {
-            setDisplayStrAsValue(getResultAsStr())
-            valueStrInMemory = null
-            operatorInMemory = null
-        }
-        clear.textContent = 'AC'
+    const event = evt
+    switch (event.code) {
+        case "NumpadAdd":
+            handleOperators('addition')
+        break;
+        case "Minus":
+        case "NumpadSubtract":
+            handleOperators('subtraction')
+        break;
+        case "Slash":
+        case "NumpadDivide":
+            handleOperators('division')
+        break;
+        case "NumpadMultiply":
+            handleOperators('multiplication')
+        break;
+
+        case "NumpadEnter":
+        case "Enter":
+        case "Equal":
+            if (valueStrInMemory) {
+                setDisplayStrAsValue(getResultAsStr())
+                valueStrInMemory = null
+                operatorInMemory = null
+            }
+            clear.textContent = 'AC'
+            break;
     }
 })
 
