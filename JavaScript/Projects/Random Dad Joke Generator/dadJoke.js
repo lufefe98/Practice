@@ -6,6 +6,7 @@ const askJoke = document.querySelector('#ask')
 
 // Variables
 let num
+let countdownNum
 
 // The variable num has been created and will be initiallized to a value
 // later on in the code.
@@ -129,51 +130,137 @@ const color5 = genColor5()
 
 
 // Select Joke
-const getJoke = function() {
-    display.style.color = "black"
+const getJoke = function () {
     display.style.fontSize = '2.5rem'
-    
+
     return question[num]
 }
-const showJoke = function() {
-    display.style.color = "black"
+const showJoke = function () {
     display.style.fontSize = '4rem'
-    
+
     return answer[num]
 }
+// The above functions return the setup for the joke and the 
+// punchline, respectively, by chaining the num variable to access the
+// values from the object literals (num is assigned to a random number
+// between 1 to 30 inside the event listener)
 
 
 
 
 
 // EVENT LISTENERS
-askJoke.addEventListener('click', function() {
+askJoke.addEventListener('click', function () {
+    // Display Joke
+
+    display.style.display = "flex"
+
+
     num = Math.floor(Math.random() * 30)
+
     // num has been initialized to a random number that is used inside the
     // getJoke() and showJoke() function expressions and is used to access
     // the values from the question and answer objects above in a random.
     // manner so the jokes do not appear in the same order every time a user
     // clicks the askJoke button.
+    // The num variable is assigned to the random number inside this event
+    // listener so that the joke is generated everytime the button is clicked
+    // instead of having to reload the page to get a new random number.
 
-    display.style.display = "flex"
 
-    setTimeout(() => display.textContent = getJoke()
-    , 500)
-    // Show the question half a second after the display pops up on the 
+    setTimeout(() => display.textContent = getJoke(), 1000)
+
+    // Show the question one second after the display pops up on the 
     // screen.
 
-    setTimeout(() => display.textContent = showJoke()
-    , 5500)
-    // Show the answer 5 seconds after the question appears.
+    const setupJoke = getJoke()
 
-    // const countdown = [
-    //     '5', '4', '3', '2', '1'
-    // ]
 
-    // Append a span to the top right hand corner of the display and 
-    // set those numbers as the text content for the span as a countdown
-    // using setInterval().
-    
+    if (setupJoke.length >= 55) {
+        setTimeout(() => {
+            display.textContent = showJoke()
+        }, 8000)
+    } else {
+        setTimeout(() => {
+            display.textContent = showJoke()
+        }, 6000)
+    }
+
+    // Show the answer 6 seconds after the question appears but if the
+    // length of the string for the setup of the joke is exceeds 55 characters
+    // or equal to 55 characters, then set the timer to 8 seconds.
+    // This should give users extra time to read set ups that might take a
+    // a bit longer to read.
+
+
+    askJoke.style.fontSize = '1.5rem'
+
+    // Reduced the font size for the text in the button so it does not compete
+    // with the display for the jokes.
+
+
+
+
+
+    // Countdown Timer
+
+    const newSpan = document.body.appendChild(document.createElement('span'))
+    newSpan.classList.add("countdown-timer")
+
+    // Appended the span and gave it a class of "countdown-timer" so it
+    // can take on the styles for that class in the CSS file.
+
+    if (setupJoke.length < 55) {
+        countdownNum = 6
+        // Set the timer to 6 to account for the one second it takes
+        // for the joke to display.
+
+        timer = setInterval(() => {
+            countdownNum--
+            newSpan.textContent = countdownNum
+            // For each second that passes, the number that is used for the
+            // countdown should be decremented by one.
+            // The text content for the span should be set to countdownNum
+            // in order to show the actual countdown
+
+            if (countdownNum === 0) {
+                setTimeout(() => newSpan.textContent = "", 1000)
+                clearInterval(timer)
+                // Once countdownNum has reached 0, the span should 
+                // have no text inside of it. because the countdown is now
+                // over, but it should be delayed by a second so it doesn't
+                // look too abrupt and make the countdown a bit smoother.
+
+                // Once the countdown is over, the interval should clear and
+                // stop executing the function.
+            }
+        }, 1000)
+    } else if (setupJoke.length >= 55) {
+        countdownNum = 8
+        // Set the timer to 8 to account for the one second it takes
+        // for the longer jokes to display.
+
+        timer = setInterval(() => {
+            countdownNum--
+            newSpan.textContent = countdownNum
+            // For each second that passes, the number that is used for the
+            // countdown should be decremented by one.
+            // The text content for the span should be set to countdownNum
+            // in order to show the actual countdown
+
+            if (countdownNum === 0) {
+                setTimeout(() => newSpan.textContent = "", 1000)
+                clearInterval(timer)
+                // Once countdownNum has reached 0, the span should 
+                // have no text inside of it because the countdown is now
+                // over, but it should be delayed by a second so it doesn't
+                // look too abrupt and make the countdown a bit smoother. 
+
+                // Once the countdown is over, the interval should clear and
+                // stop executing the function.
+            }
+        }, 1000)
+    }
 })
 
 
@@ -183,11 +270,3 @@ askJoke.addEventListener('click', function() {
 
 // SET DISPLAY
 body.style.backgroundImage = `linear-gradient(to left, rgb(${color1}), rgb(${color2}), rgb(${color3}), rgb(${color4}), rgb(${color5}))`
-
-
-
-
-// USE SET INTERVAL FOR THE TIMER BETWEEN JOKES
-// CONSIDER SPECIAL ADDITIONAL TIME FOR QUESTIONS WITH LONGER STRING
-    // (SPECIFY LENGTH)
-// REMOVE THE RANDOM COLOR BACKGROUND FOR THE DISPLAY
