@@ -1,13 +1,23 @@
 * {
     box-sizing: border-box;
 }
+
 html {
     height: 100%;
 }
+
 body {
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.h1-wrap {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2rem;
+    text-align: center;
+}
+
 #display {
     display: none;
     justify-content: center;
@@ -15,6 +25,7 @@ body {
     margin: 50px auto 50px;
     height: 40vh;
     width: 60%;
+    z-index: 10;
     font-size: 2rem;
     border-radius: 20px;
     background: rgb(143, 214, 211);
@@ -28,6 +39,7 @@ body {
     flex-direction: row;
     justify-content: center;
 }
+
 #ask {
     height: 10%;
     width: auto;
@@ -35,15 +47,17 @@ body {
     font-size: 2.5rem;
     border-radius: 20px;
     color: white;
-    transition: transform 5s ease-out;
     background: rgba(0, 0, 255, 0.8);
     border: 3px solid rgba(39, 39, 39, 0.25);
     box-shadow: 0 5px 5px 10px rgba(24, 24, 29, 0.4);
 }
+
 #ask:hover {
+    cursor: pointer;
     transform: translate(0, -10px);
     background: rgba(77, 77, 201, 0.801);
 }
+
 .countdown-timer {
     display: flex;
     justify-content: center;
@@ -58,4 +72,43 @@ body {
     background: white;
     border-radius: 20%;
     border: 2px solid black;
+}
+
+
+
+/* Animations */
+
+.animate-display {
+    animation-name: reveal-display;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+}
+
+@keyframes reveal-display {
+    0% {
+        margin-top: 20px;
+    }
+
+    33% {
+        margin-top: 33px;
+    }
+
+    66% {
+        margin-top: 66px;
+    }
+
+    100% {
+        margin-top: 100px;
+    }
+}
+
+@keyframes shrink-btn {
+    50% {
+        font-size: 2rem;
+    }
+    100% {
+        font-size: 1.5rem;
+    }
 }
