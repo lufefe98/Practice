@@ -127,6 +127,9 @@ const color3 = genColor3()
 const color4 = genColor4()
 const color5 = genColor5()
 
+// All the above functions have been saved to variables to make it easier and more
+// readable when used later on in other parts of my code.
+
 
 
 // Select Joke
@@ -193,12 +196,6 @@ askJoke.addEventListener('click', function () {
     // a bit longer to read.
 
 
-    askJoke.style.fontSize = '1.5rem'
-
-    // Reduced the font size for the text in the button so it does not compete
-    // with the display for the jokes.
-
-
 
 
 
@@ -261,6 +258,28 @@ askJoke.addEventListener('click', function () {
             }
         }, 1000)
     }
+
+    // Animate Elements
+
+        display.classList.add('animate-display')
+
+        // The above adds a class that will be used for the display to add
+        // animations
+
+    
+        askJoke.style.cssText = `
+        animation-name: shrink-btn;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-play-state: running;
+        animation-fill-mode: forwards;
+        `
+    
+        // The above code Reduces the font size for the text in the button
+        // so it does not compete with the display for the jokes.
+        // This is will be done with the use of animations that will be added
+        // in the CSS file with the use of keyframes.
+
 })
 
 
