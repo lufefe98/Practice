@@ -28,7 +28,7 @@ const imgs = {
 // Variables
 let num
 let countdownNum
-let selectImg = Math.floor(Math.random() * 4)
+let selectImg
 
 // The variable num has been created and will be initiallized to a value
 // later on in the code.
@@ -207,12 +207,20 @@ const animateImg = function() {
 
 // EVENT LISTENERS
 askJoke.addEventListener('click', function () {
+    // variables
+    selectImg = Math.floor(Math.random() * 4)
+
+
     // Display Joke
 
     display.style.display = "flex"
 
 
     num = Math.floor(Math.random() * 30)
+
+    if (num === 0) {
+        num = 1
+    }
 
     // num has been initialized to a random number that is used inside the
     // getJoke() and showJoke() function expressions and is used to access
@@ -231,7 +239,7 @@ askJoke.addEventListener('click', function () {
 
     const setupJoke = getJoke()
 
-    try {
+    
             if (setupJoke.length >= 55) {
         setTimeout(() => {
             display.textContent = showJoke()
@@ -262,13 +270,7 @@ askJoke.addEventListener('click', function () {
             animateImg()
 
         }, 6000)}
-    } catch (error) {
-        alert('An error has occured, please click the button or reload the page and try again')
-        display.style.display = "none"
 
-        console.log(error)
-        // Show the error in the console.
-    }
 
 
 
