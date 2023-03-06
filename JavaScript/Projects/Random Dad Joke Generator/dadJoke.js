@@ -178,8 +178,8 @@ askJoke.addEventListener('click', function () {
 
     const setupJoke = getJoke()
 
-
-    if (setupJoke.length >= 55) {
+    try {
+            if (setupJoke.length >= 55) {
         setTimeout(() => {
             display.textContent = showJoke()
         }, 8000)
@@ -188,12 +188,23 @@ askJoke.addEventListener('click', function () {
             display.textContent = showJoke()
         }, 6000)
     }
+    } catch (error) {
+        alert('An error has occured, please reload the page and try again')
+    }
+
+
+
 
     // Show the answer 6 seconds after the question appears but if the
     // length of the string for the setup of the joke is exceeds 55 characters
     // or equal to 55 characters, then set the timer to 8 seconds.
     // This should give users extra time to read set ups that might take a
     // a bit longer to read.
+
+    // Wrapped the code for showing the punchline of the joke inside a try...catch
+    // block so the error concerning '.length' does not occur and affect
+    // the user experience and instead sends an alert to tell the user to reload
+    // the page.
 
 
 
