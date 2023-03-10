@@ -26,11 +26,11 @@ const imgs = {
 
 
 // Variables
-let num
+let selectJoke
 let countdownNum
 let selectImg
 
-// The variable num has been created and will be initiallized to a value
+// The variable selectJoke has been created and will be initiallized to a value
 // later on in the code.
 
 // selectImg is set to math.floor of math.random * 4 so that it can select
@@ -165,15 +165,15 @@ const color5 = genColor5()
 const getJoke = function () {
     display.style.fontSize = '2.5rem'
 
-    return question[num]
+    return question[selectJoke]
 }
 const showJoke = function () {
     display.style.fontSize = '4rem'
 
-    return answer[num]
+    return answer[selectJoke]
 }
 // The above functions return the setup for the joke and the 
-// punchline, respectively, by chaining the num variable to access the
+// punchline, respectively, by chaining the selectJoke variable to access the
 // values from the object literals (num is assigned to a random number
 // between 1 to 30 inside the event listener)
 
@@ -225,18 +225,20 @@ askJoke.addEventListener('click', function () {
     display.style.display = "flex"
 
 
-    num = Math.floor(Math.random() * 30)
+    selectJoke = Math.floor(Math.random() * 31)
 
-    if (num === 0) {
-        num = 1
+    if (selectJoke === 0) {
+        selectJoke = 1
+    } else if (selectJoke === 31) {
+        selectJoke = 30
     }
 
-    // num has been initialized to a random number that is used inside the
+    // selectJoke has been initialized to a random number that is used inside the
     // getJoke() and showJoke() function expressions and is used to access
     // the values from the question and answer objects above in a random.
     // manner so the jokes do not appear in the same order every time a user
     // clicks the askJoke button.
-    // The num variable is assigned to the random number inside this event
+    // The selectJoke variable is assigned to the random number inside this event
     // listener so that the joke is generated everytime the button is clicked
     // instead of having to reload the page to get a new random number.
 
@@ -399,3 +401,9 @@ askJoke.addEventListener('click', function () {
 
 // SET DISPLAY
 body.style.backgroundImage = `linear-gradient(to left, rgb(${color1}), rgb(${color2}), rgb(${color3}), rgb(${color4}), rgb(${color5}))`
+
+// Added background image style to the body of the page with the color 1-5
+// function expressions with 3 sets of random numbers between 0 - 255 that
+// are going to represent the numbers for the rgb channels and this allows
+// for the background to have a different background image every time the
+// page is reloaded.

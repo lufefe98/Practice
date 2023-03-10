@@ -164,13 +164,14 @@ body {
     transform: rotate(20deg) scaleX(-1);
 }
 
+
+/* Image Animations */
+
 .img-left {
-    display: block;
     animation: left-img 2s linear forwards;
     animation-play-state: running;
 }
 .img-right {
-    display: block;
     animation: right-img 2s linear forwards;
     animation-play-state: running;
 }
