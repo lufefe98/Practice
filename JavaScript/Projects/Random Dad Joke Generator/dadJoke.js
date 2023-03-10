@@ -182,7 +182,7 @@ const showJoke = function () {
 
 
 // Animate Images
-const animateImg = function() {
+const animateImg = function () {
     imgs[selectImg]['a'].classList.add('img-left')
     imgs[selectImg]['b'].classList.add('img-right')
     imgs[selectImg]['a'].style.display = 'block'
@@ -200,6 +200,15 @@ const animateImg = function() {
 // The images are given a display of block to override the display that was
 // set in the CSS file for the images (this was done so the images don't interfere
 // with the rest of the application before the button for the joke is clicked)
+
+const hideImg = function () {
+    imgs[selectImg]['a'].classList.remove('img-left')
+    imgs[selectImg]['a'].classList.add('hide-left-img')
+    imgs[selectImg]['b'].classList.remove('img-right')
+    imgs[selectImg]['b'].classList.add('hide-right-img')
+
+    return
+}
 
 
 
@@ -239,8 +248,8 @@ askJoke.addEventListener('click', function () {
 
     const setupJoke = getJoke()
 
-    
-            if (setupJoke.length >= 55) {
+
+    if (setupJoke.length >= 55) {
         setTimeout(() => {
             display.textContent = showJoke()
 
@@ -255,9 +264,14 @@ askJoke.addEventListener('click', function () {
             // objects is equal to 0, then the value for selectImg should be
             // overriden to be 1 and if it is 4, then it should be overriden to
             // be overriden to be 3.
-            
-            
-        }, 8000)} else {
+
+            setTimeout(() => hideImg(), 5000)
+            // After 5 seconds, the images should be hidden with the hideImg()
+            // function expression.
+
+
+        }, 8000)
+    } else {
         setTimeout(() => {
             display.textContent = showJoke()
 
@@ -269,7 +283,10 @@ askJoke.addEventListener('click', function () {
             }
             animateImg()
 
-        }, 6000)}
+            setTimeout(() => hideImg(), 5000)
+                
+        }, 6000)
+    }
 
 
 
@@ -354,24 +371,24 @@ askJoke.addEventListener('click', function () {
 
     // Animate Elements
 
-        display.classList.add('animate-display')
+    display.classList.add('animate-display')
 
-        // The above adds a class that will be used for the display to add
-        // animations
+    // The above adds a class that will be used for the display to add
+    // animations
 
-    
-        askJoke.style.cssText = `
+
+    askJoke.style.cssText = `
         animation-name: shrink-btn;
         animation-duration: 2s;
         animation-timing-function: linear;
         animation-play-state: running;
         animation-fill-mode: forwards;
         `
-    
-        // The above code Reduces the font size for the text in the button
-        // so it does not compete with the display for the jokes.
-        // This is will be done with the use of animations that will be added
-        // in the CSS file with the use of keyframes.
+
+    // The above code Reduces the font size for the text in the button
+    // so it does not compete with the display for the jokes.
+    // This is will be done with the use of animations that will be added
+    // in the CSS file with the use of keyframes.
 
 })
 
