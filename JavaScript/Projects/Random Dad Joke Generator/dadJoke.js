@@ -50,7 +50,7 @@ const question = {
     2: 'How do you start a party in the Solar System?',
     3: 'Why did the bike fall?',
     4: 'Why did the cat get a fine?',
-    5: 'Why did the thief wear red gloves?',
+    5: 'Why did the thief wear blue gloves?',
     6: 'What did the herbalist say when he was running late?',
     7: 'What did the cop say to the Ice Cube? ',
     8: 'What do you call a criminal taking their own mug-shot?',
@@ -220,7 +220,18 @@ askJoke.addEventListener('click', function () {
     selectImg = Math.floor(Math.random() * 4)
 
 
+    // other
+    setTimeout(() => askJoke.setAttribute('disabled', ''), 100)
+
+    // After 100 milliseconds, the button should be disabled so that the user
+    // can not initaite another joke while the current one is still being
+    // processed (This could be improved in future)
+
+
     // Display Joke
+
+
+    // setup for joke
 
     display.style.display = "flex"
 
@@ -248,6 +259,9 @@ askJoke.addEventListener('click', function () {
     // Show the question one second after the display pops up on the 
     // screen.
 
+
+    // show punchline of joke
+
     const setupJoke = getJoke()
 
 
@@ -267,9 +281,13 @@ askJoke.addEventListener('click', function () {
             // overriden to be 1 and if it is 4, then it should be overriden to
             // be overriden to be 3.
 
-            setTimeout(() => hideImg(), 5000)
-            // After 5 seconds, the images should be hidden with the hideImg()
+            setTimeout(() => hideImg(), 3000)
+            // After 3 seconds, the images should be hidden with the hideImg()
             // function expression.
+
+            setTimeout(() => askJoke.removeAttribute('disabled'), 3000)
+            // After the joke has run its course, the button can be enabled
+            // again by removing the 'disabled' attribute.
 
 
         }, 8000)
@@ -285,7 +303,9 @@ askJoke.addEventListener('click', function () {
             }
             animateImg()
 
-            setTimeout(() => hideImg(), 5000)
+            setTimeout(() => hideImg(), 3000)
+
+            setTimeout(() => askJoke.removeAttribute('disabled'), 3000)
                 
         }, 6000)
     }
