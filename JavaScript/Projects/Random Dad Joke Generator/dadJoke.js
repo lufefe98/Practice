@@ -402,6 +402,7 @@ askJoke.addEventListener('click', function () {
     askJoke.style.cssText = `
         animation-name: shrink-btn;
         animation-duration: 2s;
+        animation-delay: 1s;
         animation-timing-function: linear;
         animation-play-state: running;
         animation-fill-mode: forwards;
