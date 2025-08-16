@@ -1,0 +1,39 @@
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.grid-box {
+    width: 60px;
+    height: 60px;
+    background-color: lightgray;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.grid-box.selected {
+    background-color: coral;
+}
+
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 12px;
+}
+
+td {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border: 1px solid #ccc;
+    background: #eee;
+    cursor: pointer;
+}
+
+td.selected {
+    background: coral;
+    color: white;
+}
