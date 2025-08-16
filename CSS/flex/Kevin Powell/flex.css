@@ -1,0 +1,35 @@
+/* The purpose of this tutorial is to find out how flex determines flex item size */
+.flex-parent {
+    display: flex;
+}
+
+.flex-item {
+    padding: .5em;
+    background: #efefef;
+    border: 3px solid #333;
+}
+/* When working with flex, if you were to expand the width/size
+    of a flex item, flex will first look at the content size of the
+    an element (ie: how much space the element takes up).
+
+    Essentially, what is happening is that flex makes the browser
+    implicitly set the width/height to max-content.
+    - When max-contnet is set, it does not have any line-breaks
+    so, any text that is very long will continue on without breaking
+    onto the next line 
+    - Flex-shrink kicks in when there is an element that expands to
+      a size that is larger than the other elements and thus takes up
+      more space and shrinks the other elements
+    - If we don't have flex-shrink and there is an element that gets too
+      large, then we get a situation where all flex elements end up
+      overflowing their parent container
+           
+    
+    
+    
+    
+    
+    
+    
+    
+    */
