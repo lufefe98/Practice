@@ -1,39 +1,31 @@
-#grid-container {
-    display: grid;
-    grid-template-columns: repeat(5, 60px);
-    grid-gap: 10px;
-    margin-bottom: 20px;
-}
-
-.grid-box {
-    width: 60px;
-    height: 60px;
-    background-color: lightgray;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.grid-box.selected {
-    background-color: coral;
-}
-
-
-table {
-    border-collapse: collapse;
-    margin-bottom: 12px;
-}
-
-td {
-    width: 60px;
-    height: 60px;
+body {
+    font-family: Arial, sans-serif;
     text-align: center;
-    border: 1px solid #ccc;
-    background: #eee;
-    cursor: pointer;
+    padding: 20px;
+    transition: background-color 0.3s ease;
 }
 
-td.selected {
-    background: coral;
-    color: white;
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    width: 200px;
+}
+
+li {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+li:hover {
+    background-color: #ddd;
+}
+
+button {
+    padding: 10px 15px;
+    cursor: pointer;
 }

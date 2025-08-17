@@ -1,78 +1,56 @@
-// Select elements
-const gridContainer = document.querySelector('#grid-container');
-const reverseButton = document.getElementById('reverse-btn');
-let table = null;
+// Create Elements
 
-// Create grid (nested for loops)
-function createGrid(rows, cols) {
-  // Clear any existing content
-  gridContainer.innerHTML = '';
+const ul = document.querySelector('ul')
 
-  // Create a fresh table
-  table = document.createElement('table');
+const button = document.querySelector('#reverse-btn')
 
-  for (let i = 0; i < rows; i++) {
-    const tr = document.createElement('tr');
+const body = document.querySelector('body')
 
-    for (let j = 0; j < cols; j++) {
-      const td = document.createElement('td');
-      td.textContent = `${i + 1},${j + 1}`;         // optional label
-      td.classList.add('grid-cell');                 // optional class for styling
-      tr.appendChild(td);
-    }
+// For loop
 
-    table.appendChild(tr);
-  }
+// colors text 
 
-  gridContainer.appendChild(table);
+const colorsArray = [
+  'Red',
+  'Orange',
+  'Yellow',
+  'Green',
+  'Blue'
+]
 
-  // After building the table, add click listeners to each cell
-  addCellListeners();
-}
+for (let i = 0; i < 5; i++) {
+  // Create List Items
+  const listItems = document.createElement('li')
+  ul.appendChild(listItems)
 
-// Add click listeners to all table cells using forEach
-function addCellListeners() {
-  // querySelectorAll returns a NodeList — forEach works on it
-  const cells = table.querySelectorAll('td');
+  // Add Text to List Items
 
-  cells.forEach(cell => {
-    cell.addEventListener('click', () => {
-      cell.classList.toggle('selected'); // toggle selected class
-    });
+  listItems.textContent = colorsArray[i]
+
+  // Change Body color
+
+  const lis = document.querySelectorAll('li')
+
+  lis.forEach(li => {
+    li.addEventListener('click', () => {
+      body.style.backgroundColor = li.textContent
+    })
   });
+
 }
 
-// Reverse the order of all cells when the button is clicked
-reverseButton.addEventListener('click', () => {
-  if (!table) return;
 
-  // Use spread operator to convert NodeList to an array so we can reverse it
-  const cellsArray = [...table.querySelectorAll('td')];
-  cellsArray.reverse();
+// Reverse List Items
 
-  // Determine rows/cols from the current table
-  const rows = table.rows.length;
-  const cols = rows > 0 ? table.rows[0].cells.length : 0;
-
-  // Build a new table using the reversed cells
-  const newTable = document.createElement('table');
-  let index = 0;
-
-  for (let i = 0; i < rows; i++) {
-    const tr = document.createElement('tr');
-    for (let j = 0; j < cols; j++) {
-      // append the next cell from the reversed array
-      tr.appendChild(cellsArray[index++]);
-    }
-    newTable.appendChild(tr);
+button.addEventListener('click', () => {
+  const lis = document.querySelectorAll('li')
+  const listArray = [...lis]
+  const reverseList = listArray.reverse()
+  for (let i = 0; i < 5; i++) {
+    ul.appendChild(reverseList[i])
   }
 
-  // Replace the old table in the DOM and update the reference
-  gridContainer.replaceChild(newTable, table);
-  table = newTable;
+  console.log('JavaScript practice done')
+})
 
-  // Note: event handlers and classes on the moved td elements are preserved
-});
 
-// initialize
-createGrid(5, 5);
