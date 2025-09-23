@@ -5,6 +5,12 @@ const names = ['Sam', 'James', 'Arthur', 'Ashley', 'Jack', 'John', 'Karen', 'Mar
 
 // Sort names
 
-names.sort((a, b) => a.length - b.length)
+names.sort((a, b) => {
+    if(a.length === b.length) {
+        return a.localeCompare(b)
+    }
+
+    return a.length - b.length
+})
 
 console.log(names)
