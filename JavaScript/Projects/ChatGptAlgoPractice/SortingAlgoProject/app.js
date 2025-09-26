@@ -1,45 +1,11 @@
 // Select Elements
 
-
-
-// Access Price and Product Names
-
-
-
-
-
-// Event listeners
-
-// dropDownMenu.addEventListener('change', function () {
-//     const selected = this.value
-//     // Decide how to sort here
-
-//     let products = card.map(getProductValues)
-
-//     if (selected === 'price-asc') {
-//         for (let i = 0; i < products.length; i++) {
-//             if () { }
-//         }
-//     }
-
-//     if (selected === 'price-desc') {
-//         console.log('cash')
-//     }
-
-//     if (selected === 'name-asc') {
-
-//     }
-
-//     if (selected === 'name-desc') {
-
-//     }
-
-// })
-
-
-
 const container = document.querySelector('.product-container')
 const dropDownMenu = document.querySelector('select')
+
+
+
+// Event Listener
 
 dropDownMenu.addEventListener('change', function () {
   const cards = Array.from(container.querySelectorAll(".card"));

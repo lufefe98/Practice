@@ -2,12 +2,6 @@
 
 const select = document.querySelector('#sort-menu')
 const ul = document.querySelector('ul')
-
-
-    // const listItems = Array.from(ul.querySelectorAll('li'))
-
-    // console.log(parseFloat(listItems[0].textContent)+parseFloat('1'))
-
     
 
 
