@@ -13,7 +13,7 @@ select.addEventListener('change', () => {
 
 
     // Add text elements into a map along with li and return them
-    const ProductListData = productList.map(listItem => {
+    const productListData = productList.map(listItem => {
         const product = listItem.querySelector('.product').textContent.toLowerCase().replace(/[^a-zA-Z0-9]/g, "")
         const price = parseFloat(listItem.querySelector('.price').textContent.replace(/[^0-9.]/g, ""))
 
@@ -26,22 +26,22 @@ select.addEventListener('change', () => {
 
     switch (select.value) {
         case "price-asc":
-            ProductListData.sort((a, b) => a.price - b.price);
+            productListData.sort((a, b) => a.price - b.price);
             break;
         case "price-desc":
-            ProductListData.sort((a, b) => b.price - a.price);
+            productListData.sort((a, b) => b.price - a.price);
             break;
         case "prod-asc":
-            ProductListData.sort((a, b) => a.product.localeCompare(b.product));
+            productListData.sort((a, b) => a.product.localeCompare(b.product));
             break;
         case "prod-desc":
-            ProductListData.sort((a, b) => b.product.localeCompare(a.product));
+            productListData.sort((a, b) => b.product.localeCompare(a.product));
             break;
     }
 
 
     ul.innerHTML = ''
-    ProductListData.forEach(element => {
+    productListData.forEach(element => {
         ul.appendChild(element.listItem)
     });
 })
