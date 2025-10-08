@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Filter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🛒 Product Catalog</h1>
+
+  <!-- Filter Controls -->
+  <div class="filters">
+    <label>
+      Category:
+      <select id="category-filter">
+        <option value="all">All</option>
+        <option value="electronics">Electronics</option>
+        <option value="clothing">Clothing</option>
+        <option value="home">Home</option>
+        <option value="beauty">Beauty</option>
+      </select>
+    </label>
+
+    <label>
+      Max Price:
+      <input type="number" id="price-filter" placeholder="Enter max price">
+    </label>
+
+    <label>
+      Search:
+      <input type="text" id="search-filter" placeholder="Search product name">
+    </label>
+  </div>
+
+  <!-- Product List -->
+  <div class="products">
+    <div class="card" data-category="electronics" data-price="1200">
+      <h3 class="product-name">Laptop</h3>
+      <p class="product-price">R1200</p>
+    </div>
+    <div class="card" data-category="electronics" data-price="800">
+      <h3 class="product-name">Phone</h3>
+      <p class="product-price">R800</p>
+    </div>
+    <div class="card" data-category="clothing" data-price="400">
+      <h3 class="product-name">Jacket</h3>
+      <p class="product-price">R400</p>
+    </div>
+    <div class="card" data-category="home" data-price="250">
+      <h3 class="product-name">Lamp</h3>
+      <p class="product-price">R250</p>
+    </div>
+    <div class="card" data-category="beauty" data-price="150">
+      <h3 class="product-name">Perfume</h3>
+      <p class="product-price">R150</p>
+    </div>
+    <div class="card" data-category="home" data-price="90">
+      <h3 class="product-name">Mug</h3>
+      <p class="product-price">R90</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
