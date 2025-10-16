@@ -11,16 +11,13 @@ function filterPrices(arr, min, max) {
         return
     }
 
-        filteredPriceRange = arr.filter(price => {
+        return arr.filter(price => {
             if (price >= min && price <= max) {
                 return true
             } else {
                 return false
             }
         })
-
-        console.log(filteredPriceRange)
-        return filteredPriceRange
 }
 
 filterPrices(prices, 100, 400)

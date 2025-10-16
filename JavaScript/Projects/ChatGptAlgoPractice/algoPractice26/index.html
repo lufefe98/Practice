@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Price Range Filter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Product Filter</h1>
+    <div class="filter-controls">
+      <input type="number" id="min-price" placeholder="Min Price">
+      <input type="number" id="max-price" placeholder="Max Price">
+      <button id="filter-btn">Filter</button>
+      <button id="reset-btn">Reset</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="product-list">
+      <div class="card" data-price="50">
+        <h3 class="product-name">Notebook</h3>
+        <p class="product-price">R50</p>
+      </div>
+      <div class="card" data-price="120">
+        <h3 class="product-name">Headphones</h3>
+        <p class="product-price">R120</p>
+      </div>
+      <div class="card" data-price="300">
+        <h3 class="product-name">Keyboard</h3>
+        <p class="product-price">R300</p>
+      </div>
+      <div class="card" data-price="25">
+        <h3 class="product-name">Pen</h3>
+        <p class="product-price">R25</p>
+      </div>
+      <div class="card" data-price="600">
+        <h3 class="product-name">Monitor</h3>
+        <p class="product-price">R600</p>
+      </div>
+      <div class="card" data-price="400">
+        <h3 class="product-name">Mouse</h3>
+        <p class="product-price">R400</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
