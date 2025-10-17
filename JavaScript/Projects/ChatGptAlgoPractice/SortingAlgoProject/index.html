@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psuedo-Element Project</title>
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@900&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+    <nav>
+        <h1>
+            <a href="#">
+                Green Fever
+            </a>
+        </h1>
+
+
+
+        <ul class="menu">
+
+
+
+            <li>
+                <a href="#">
+                    Products
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    About
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Contact
+                </a>
+            </li>
+            <li>
+                <a href="#" class="user">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class="container">
+
+        <select name="sort-menu" id="sort-menu">
+            <option value="price-asc">Sort by Price(Ascending)</option>
+            <option value="price-desc">Sort by Price(Descending)</option>
+            <option value="name-asc">Sort by Name(Ascending)</option>
+            <option value="name-desc">Sort by Name(Descending)</option>
+        </select>
+
+        <div class="product-container">
+                <div class="card">
+                    <div class="card-top">
+                        <img src="https://images.unsplash.com/photo-1605039982749-c2fe1dd2a588?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+                    <div class="card-bottom">
+                        <h3 class="product-name">Ylang-Ylang Essential Oil</h3>
+                        <p class="product-price">R100.00</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-top">
+                        <img src="https://images.unsplash.com/photo-1605039982749-c2fe1dd2a588?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+                    <div class="card-bottom">
+                        <h3 class="product-name">Lemongrass Essential Oil</h3>
+                        <p class="product-price">R300.00</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-top">
+                        <img src="https://images.unsplash.com/photo-1605039982749-c2fe1dd2a588?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+                    <div class="card-bottom">
+                        <h3 class="product-name">Rose Essential Oil</h3>
+                        <p class="product-price">R120.00</p>
+                    </div>
+                </div>
+ 
+                <div class="card">
+                    <div class="card-top">
+                        <img src="https://images.unsplash.com/photo-1605039982749-c2fe1dd2a588?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+                    <div class="card-bottom">
+                        <h3 class="product-name">Rosewood Essential Oil</h3>
+                        <p class="product-price">R220.00</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-top">
+                        <img src="https://images.unsplash.com/photo-1605039982749-c2fe1dd2a588?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+                    <div class="card-bottom">
+                        <h3 class="product-name">Lemon Essential Oil</h3>
+                        <p class="product-price">R200.00</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-top">
+                        <img src="https://images.unsplash.com/photo-1605039982749-c2fe1dd2a588?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+                    <div class="card-bottom">
+                        <h3 class="product-name">Lavendar Essential Oil</h3>
+                        <p class="product-price">R150.00</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+/* The purpose of this tutorial is to find out how flex determines flex item size */
+.flex-parent {
+    display: flex;
+    width: 600px;
+}
+
+.flex-item {
+  flex: 1;
+  padding: .5em;
+    background: #efefef;
+    border: 3px solid #333;
+}
+
+.flex-item.big {
+  width: 600px;
+}
+
+/* 
+  When you initailly set a container to flex, it will make the
+  elements inside of the flex container look smaller, but it is
+  not using flex-shrink. It is merely implicitly setting the 
+  width/height to max-content for each flex item.
+  The width of max-content does not have any line breaks/
+  When you use flex, it looks at the longest piece of content 
+  and makes that the width of the flex item.
+  Flex-shrink kicks in when you add a large amount of content
+  into an element, causing it to move over into the next line (this
+  happens behind the scenes and it is on by default unless you
+  specify that you don't want it activated).
+*/
+
+
+/* 
+  In cases where the width of an element is too big to fit in a
+  certain dimension of a parent, it will shrink the flex items
+  to fit within the dimensions of the parent
+  Flex shrink decides the size of elements by calculating the rate
+  by which the elements in a flex container shrink by.
+  It starts by looking at the actual size of each element without
+  the shrink kicking in, compared to the size of the container itself
+  and shrinks the items in proportion to the container
+  (eg: your flex items combined with is double their container, then
+  the items will be shrunk down by 2... roughly)
+*/
+
+
+/* 
+  If you have a flex basis, then it gives all the flex items
+  the same size (if you use percentages for the flex-basis, then
+  the elements will be calculated based on the size of their
+  parent container)
+  If you give the flex items a flex value with a number, then  it
+  will give your flex items a similar size (eg: if you give them
+  a flex value of 1)
+    - The flex shorthand gives you three values. The first is the 
+    flex grow, then flex shrink and finally the flex basis.
+    - If you set the flex shorthand property to 1, then it sets
+    the flex grow and shrink to 1 and the flex basis is set to 0, meaning
+    that they start of at a width of 0.
+*/
+
+
+/* 
+  When using flex: 1, you don't get even columns even if you set
+  the elements to grow at a similar rate.
+  Flexbox doesn't look at padding and border size because as you
+  shrink and grow your flex elements, you get a situation where
+  the border and the padding grow and shrink as well, and they might
+  disappear altogether, which is not ideal. Hence why it only looks
+  at max-content.
+  In practice, what happens is that it subtracts the borders width from the 
+  the parent total width and then distributes the remaining width between
+  the flex items and then adding the border and padding back to the
+  flex items
+
+
+  - A solution to this could be using the grid model and setting the
+  grid-auto-flow to column and the grid-auto-column to 1fr
+*/
+
+
+
+/* CSS FLEXBOX TUTORIAL DONE */
