@@ -9,10 +9,19 @@ function bubbleSort(arr) {
     // Outer For Loop
     for (let i = 0; i < arr.length; i++) {
 
+
+
         // Inner for loop
         for (let j = 0; j < arr.length; j++) {
+            // We start from the first array element and then
+            // compare the next array element until we reach the 
+            // final array element
+            
             // if statement
             if (arr[j] > arr[j + 1]) {
+                // The if statement compares the current element
+                // to the next element.
+                
                 // Create current number variable
                 let currNum = arr[j]
 
