@@ -25,31 +25,33 @@ function slidingWindow(arr, k) {
 
 
 
-    // Create a value that will store the end result of each windowSum
-    // Then two pointer values that will be used to marke the first and
-    // last value of the window. Where left is 0, so it starts at the
+    // Where left is 0, so it starts at the
     // beginning of the array and then the value for right is k, so it
     // holds the index value of the end of the window in the array.
 
-    let maxSum = windowSum
     let left = 0
     let right = k
-
-
-
+    
+    
     // Create a for loop which will be used to add all the values in the
     // window to the windowSum variable by adding the value of each array
     // element within the window.
-
-
+    
+    
     for (let i = 0; i < k; i++) {
         windowSum += arr[i]
-
+        
         // We set the 'i' variable to 0, so we can start at the start of the
         // array, which allows us to get all the values.
         // We then check if i, which denotes the current index of the array, is
         // less than k, which is the end value of the window.
     }
+    
+    // Create a value that will store the end result of each windowSum
+    // Then two pointer values that will be used to marke the first and
+    // last value of the window.
+
+    let maxSum = windowSum
 
 
     // The while loop is used to move the 'window' to the right for as long as the
