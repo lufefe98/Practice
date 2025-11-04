@@ -13,7 +13,7 @@ function slidingWindow(arr, k) {
     // or a negative value (which means we would not have a window)
 
     if (k > arr.length || k <= 0) {
-        return 'This shit does not work twinjamin'
+        return 'This does not work'
     }
 
 
