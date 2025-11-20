@@ -37,7 +37,7 @@ function longestVowelCount(str, k) {
         if (vowels.includes(str[right])) {
             windowCount++
         }
-        maxVowels = Math.max(maxVowels, str[right - k])
+        maxVowels = Math.max(maxVowels, windowCount)
     }
 
     return maxVowels
