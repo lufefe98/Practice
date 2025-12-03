@@ -20,7 +20,7 @@ function merge(left, right) {
     let j = 0
     let result = []
 
-    while (i < left.length & j < right.length) {
+    while (i < left.length && j < right.length) {
         if (left[i].localeCompare(right[j]) < 0) {
             result.push(left[i])
             i++
