@@ -1,7 +1,3 @@
-// Array Elements
-
-
-
 
 // DOM Elements
 
