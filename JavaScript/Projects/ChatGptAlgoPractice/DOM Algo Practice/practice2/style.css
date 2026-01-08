@@ -30,7 +30,7 @@ h1 {
     background: rgb(104, 180, 104);
 }
 
-.cards-container {
+#cards-container {
     display: flex;
     justify-content: space-around;
     background: rgb(104, 180, 104);
