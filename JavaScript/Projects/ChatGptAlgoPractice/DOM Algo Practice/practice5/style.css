@@ -1,3 +1,9 @@
+/* General Elements */
+
+* {
+    box-sizing: border-box;
+}
+
 /* Texts */
 
 h1 {
@@ -31,8 +37,15 @@ h1 {
     background: rgb(104, 123, 180);
 }
 
+.card {
+    flex-basis: 25%;
+    margin: 20px;
+}
+
 #cards-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     justify-content: space-around;
     background: rgb(104, 123, 180);
 }
