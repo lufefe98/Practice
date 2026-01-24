@@ -15,22 +15,30 @@
     <h1>Sort Cards</h1>
 
     <div class="filter-container">
-        <input type="text" placeholder="search here">
+        <input type="text" placeholder="search here" id="text">
 
 
-        <div>
-            <label for="range-slider">Select a value:</label>
-            <input type="range" id="range-slider" name="range-slider" min="0" max="5" step="0.5" value="2.5" list="tickmarks">
-                    
+        <div class="dual-range">
+            <label>Price filter:</label>
+            <!-- The actual draggable sliders -->
+            <div class="sliders-control">
+                <input id="fromSlider" type="range" value="10" min="0" max="50" step="5" list="tickmarks">
+                <input id="toSlider" type="range" value="40" min="0" max="50" step="5" list="tickmarks">
+            </div>
+
+            <!-- The visual labels/ticks -->
             <datalist id="tickmarks">
-                <option value="0" label="0">
-                <option value="10" label="10">
-                <option value="20" label="20">
-                <option value="30" label="30">
-                <option value="40" label="40">
-                <option value="50" label="50">
+                <option value="0" label="0"></option>
+                <option value="10" label="10"></option>
+                <option value="20" label="20"></option>
+                <option value="30" label="30"></option>
+                <option value="40" label="40"></option>
+                <option value="50" label="50"></option>
             </datalist>
         </div>
+    </div>
+
+
 
     </div>
 
