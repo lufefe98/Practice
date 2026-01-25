@@ -5,13 +5,15 @@ const container = document.getElementById('cards-container')
 const noMatchText = document.getElementById('no-match-text')
 
 const searchInput = document.getElementById('text')
-const rangeInput = document.getElementById('range-slider')
+const minRange = document.getElementById('fromSlider')
+const maxRange = document.getElementById('toSlider')
+
 
 
 
 // Functions
 
-function getSearchValue(event) {
+function filterProducts(event) {
     const searchVaue = event.target.value.toLowerCase().trim()
     let hasMatch = false
     // hasMatch is be used to check if there is a match from the
@@ -23,9 +25,21 @@ function getSearchValue(event) {
 
 
     cards.forEach(card => {
+        // Product Details
         const productName = card.querySelector('.prod-name').textContent
+        const productPrice = parseFloat(card.querySelector('.price').textContent)
 
-        if (productName.includes(searchVaue)) {
+
+        // Price Filters
+        const minPrice = minRange.value
+        const maxPrice = maxRange.value
+
+
+
+
+        // Filter Products by Name and Price
+
+        if (productName.includes(searchVaue) && productPrice >= minPrice && productPrice <= maxPrice) {
             card.style.display = ''
             hasMatch = true
             // If the search does bring up a successful search, then
@@ -35,8 +49,14 @@ function getSearchValue(event) {
         } else {
             card.style.display = 'none'
         }
-
     });
+
+
+
+
+
+
+    // Edge case
 
     noMatchText.style.display = hasMatch ? 'none' : 'block'
     // The conditional text for unsuccessful searches is displayed
@@ -47,17 +67,12 @@ function getSearchValue(event) {
 }
 
 
-// function getRangeValue(event) {
-
-// Prevent min slider from passing max slider
-
-// }
 
 
 
+// Event Listeners
 
-// // Event Listeners
+searchInput.addEventListener('input', filterProducts)
 
-searchInput.addEventListener('input', getSearchValue)
-
-// rangeInput.addEventListener('input', getRangeValue)
+minRange.addEventListener('input', filterProducts)
+maxRange.addEventListener('input', filterProducts)
