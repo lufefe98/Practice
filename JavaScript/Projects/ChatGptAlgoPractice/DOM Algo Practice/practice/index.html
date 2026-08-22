@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Filter Products</h1>
+
+    <div class="filter-container">
+        <input type="text" placeholder="search here" id="text">
+
+
+        <select name="Sort" id="sort-menu">
+            <option value="price-ascending">Sort by Price: Ascending</option>
+            <option value="price-descending">Sort by Price: Descending</option>
+            <option value="name-ascending">Sort by Name: Ascending</option>
+            <option value="name-descending">Sort by Name: Descending</option>
+        </select>
+
+
+        <div class="dual-range">
+            <label>Price filter:</label>
+            <!-- The actual draggable sliders -->
+            <div class="sliders-control">
+                <input id="fromSlider" type="range" value="0" min="0" max="50" step="5" list="tickmarks">
+                <input id="toSlider" type="range" value="50" min="0" max="50" step="5" list="tickmarks">
+            </div>
+
+            <!-- The visual labels/ticks -->
+            <datalist id="tickmarks">
+                <option value="0" label="0"></option>
+                <option value="10" label="10"></option>
+                <option value="20" label="20"></option>
+                <option value="30" label="30"></option>
+                <option value="40" label="40"></option>
+                <option value="50" label="50"></option>
+            </datalist>
+        </div>
+    </div>
+
+
+
+    </div>
+
+    <div id="cards-container">
+        <div class="card">
+            <p class="prod-name">bracelet</p>
+            <p class="price">12.00</p>
+        </div>
+
+        <div class="card">
+            <p class="prod-name">jeans</p>
+            <p class="price">44.29</p>
+        </div>
+
+        <div class="card">
+            <p class="prod-name">cap</p>
+            <p class="price">35.00</p>
+        </div>
+
+        <div class="card">
+            <p class="prod-name">dress</p>
+            <p class="price">44.55</p>
+        </div>
+
+        <div class="card">
+            <p class="prod-name">ring</p>
+            <p class="price">7.50</p>
+        </div>
+
+        <div class="card">
+            <p class="prod-name">shorts</p>
+            <p class="price">25.00</p>
+        </div>
+
+        <div class="card">
+            <p class="prod-name">skirt</p>
+            <p class="price">33.50</p>
+        </div>
+
+        <div class="card">
+            <p class="prod-name">vest</p>
+            <p class="price">18.00</p>
+        </div>
+
+        <div class="card">
+            <p class="prod-name">socks</p>
+            <p class="price">5.50</p>
+        </div>
+
+        <div class="card">
+            <p class="prod-name">sneakers</p>
+            <p class="price">49.99</p>
+        </div>
+
+        <div class="card">
+            <p class="prod-name">sandals</p>
+            <p class="price">39.99</p>
+        </div>
+
+        <div class="card">
+            <p class="prod-name">necklace</p>
+            <p class="price">14.99</p>
+        </div>
+
+        <div class="card">
+            <p class="prod-name">anklet</p>
+            <p class="price">9.50</p>
+        </div>
+
+        <div class="card">
+            <p class="prod-name">hats</p>
+            <p class="price">29.49</p>
+        </div>
+
+        <div class="card">
+            <p class="prod-name">sunglasses</p>
+            <p class="price">17.39</p>
+        </div>
+
+
+        <p id="no-match-text" style="display: none">
+            No Match Found
+        </p>
+        <!-- The above text is shown if there is no matches from search -->
+    </div>
+
+
+</body>
+
+</html>

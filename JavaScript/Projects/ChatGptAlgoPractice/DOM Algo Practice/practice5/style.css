@@ -1,0 +1,129 @@
+/* General Elements */
+
+* {
+    box-sizing: border-box;
+}
+
+/* Texts */
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.prod-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.price {
+    font-size: 25px;
+}
+
+.sort-info {
+    text-align: center;
+}
+
+
+
+
+/* Input */
+
+#text {
+    height: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+
+/* Sliders */
+
+.dual-range {
+    width: 200px; /* Adjust to your layout */
+    position: relative;
+    margin-top: 20px;
+}
+
+.sliders-control {
+    position: relative;
+    min-height: 10px;
+}
+
+/* Overlay the two sliders */
+input[type="range"] {
+    position: absolute;
+    width: 100%;
+    pointer-events: none; /* Let clicks pass through to the tracks */
+    background: none;
+    margin: 0;
+}
+
+/* Make handles clickable again */
+input[type="range"]::-webkit-slider-thumb {
+    pointer-events: all;
+    -webkit-appearance: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+    z-index: 3;
+}
+
+/* Visual Ruler (Tickmarks) */
+datalist {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px; /* Pushes labels below the slider */
+    padding: 0 5px; /* Slight offset to align with handle centers */
+}
+
+option {
+    padding: 0;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Add a vertical line for each tickmark */
+option::before {
+    content: "";
+    height: 5px;
+    width: 1px;
+    background: #000000;
+    margin-bottom: 5px;
+}
+
+
+
+
+
+
+/* Divs */
+
+.filter-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: rgb(104, 123, 180);
+}
+
+.card {
+    flex-basis: 25%;
+    margin: 20px;
+}
+
+#cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    justify-content: space-around;
+    background: rgb(104, 123, 180);
+}
+
+.not-in-search {
+    display: none;
+}
